@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'EF_hyunygothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_hyunygothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  width: 100vw;
+}
+.left, .right {
+  width: 50vw;
+  overflow: hidden;
+  display: inline-block;
+}
+.left {
+  color:pink;
+  transform: skew(0deg, -15deg);
+}
+.right {
+  color: black;
+  transform: skew(0deg, 15deg);
+}
+.left .content {
+  width: 100vw;
+  text-align: center;
+}
+.right .content {
+  width: 100vw;
+  text-align: center;
+  transform: translate(-50vw);
+}
+span {
+  display: inline-block;
+  font-family: 'EF_hyunygothic', sans-serif;
+  font-size: 4vw;
+  text-transform: uppercase;
+  line-height: .8;
+  transition: ease-out .6s;
+}
+
+/* footer 하단 고정 [S] */
+
+#wrap {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    
+}
+footer {
+	width: 100%;
+	height: 50px; /* 내용물에 따라 알맞는 값 설정 */
+	bottom: 0px;
+	position: absolute;
+	
+}
+
+section {
+	padding-bottom: 50px; /* footer의 height값과 동일 */
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+      
+/* 중앙 당고 소개 내용 */
+
+

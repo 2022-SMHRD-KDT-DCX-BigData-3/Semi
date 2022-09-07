@@ -87,8 +87,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   src: url('../fonts/notosans/NotoSans-Regular.ttf'); 
 }
 
+@font-face {
+  font-family: GmarketSansMedium;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff');
+}
 
-
+@font-face {
+    font-family: 'EF_hyunygothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_hyunygothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 /*[ RESTYLE TAG ]
 ///////////////////////////////////////////////////////////
 */
@@ -106,10 +115,10 @@ body, html {
 
 /* ------------------------------------ */
 a {
-	font-family: Montserrat;
-  font-weight: 400;
-	font-size: 15px;
-	line-height: 1.7;
+	font-family: GmarketSansMedium !important;
+  font-weight: 500;
+	font-size: 17px !important;
+	line-height: 2;
 	color: #666666;
 	margin: 0px;
 	transition: all 0.4s;
@@ -517,7 +526,7 @@ input[type="date" i] {
 -----------------------------------------------------------
 */
 .logo {
-  height: 50px;
+  height: 70px;
 }
 
 .logo > a{
@@ -1004,7 +1013,15 @@ input[type="date" i] {
   color: white;
 }
 
-
+.find-btn{
+	text-align: center;
+}
+.find-btn1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+	transform: translate(-50%,-50%);
+}
 
 
 /*[ Intro ]
@@ -1429,7 +1446,7 @@ body {padding-right: 0px !important;}
 }
 
 @media (max-width: 576px) {
-  .bg-title-page .tit6 {font-size: 30px;}
+  .bg-title-page .tit6 {font-size: 50px;}
 }
 
 
@@ -1625,3 +1642,5 @@ body {padding-right: 0px !important;}
   border-radius: 10px;
   background-color: #ec1d25;
 }
+
+
