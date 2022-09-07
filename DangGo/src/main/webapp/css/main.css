@@ -598,6 +598,173 @@ input[type="date" i] {
   color: #ec1d25;
   text-decoration: none;
 }
+/*[ survey ]
+-----------------------------------------------------------
+*/
+.wrap_menu {
+  height: 100%;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.main_menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_menu li {
+  display: block;
+  position: relative;
+}
+
+.main_menu > li {
+  padding-top: 10px;  
+  padding-bottom: 10px; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.main_menu > li > a {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  padding: 15px;
+}
+
+.header-fixed .main_menu > li > a {
+  color: #222222;
+}
+
+.main_menu > li:hover > a {
+  color: orange;
+  text-decoration: none;
+}
+
+.dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.dropbtn_icon{
+  font-family: GmarketSansMedium;
+  font-weight: 400;
+  padding : 15px;
+  width : 120px;
+  text-align: center;
+  cursor : pointer;
+  font-size : 16px;
+    text-transform: uppercase;
+  color: white;
+ 
+}
+.dropbtn_icon:hover{
+	 color: orange;
+  text-decoration: none;
+	}
+.dropbtn{
+  font-family: GmarketSansMedium;
+  font-weight: 400;
+  padding : 15px;
+  width :100px;
+  text-align: center;
+  cursor : pointer;
+  font-size : 14px;
+}
+
+.dropdown-content{
+  display : none;
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  font-weight: 200;
+  min-width : 120px;
+ 
+}
+
+
+.dropdown-content a{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+  background-color : orange;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+button[type="submit"] {
+      width: 162px;
+      height: 51px;
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 60px auto 0;
+      padding: 0;
+
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 4px;
+      background-color: #ff9500;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.2s linear;
+    }
+button[type="submit"]:hover {
+  background-color: #e89613;
+}
+
+.answer {
+  font-size: large;
+}
+.answer {
+    padding: 15px 10px;
+}
+.answer input[type=radio]{
+    display: none;
+}
+.answer input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 26px;
+    width: 100px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:15px;
+}
+.answer input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+.answer input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+
+
 
 /* ------------------------------------ */
 .sub_menu {
