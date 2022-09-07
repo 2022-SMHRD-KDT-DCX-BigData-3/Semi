@@ -4,4 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  
+  <servlet>
+    <servlet-name>listResCon</servlet-name>
+    <servlet-class>com.smhrd.controller.listResCon</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>listResCon</servlet-name>
+    <url-pattern>/listResCon</url-pattern>
+</servlet-mapping>
 </web-app>
+
+
