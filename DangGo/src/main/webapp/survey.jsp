@@ -43,7 +43,7 @@
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 
-<title>Document</title>
+<title>Question</title>
 <style>
 ul li {
 	list-style-type: none;
@@ -61,7 +61,7 @@ ul li {
 					<div class="wrap_header trans-0-3">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.html"> <img src="images/Dango1.png"
+							<a href="index.jsp"> <img src="images/Dango1.png"
 								width="100px" height="100px" alt="IMG-LOGO"
 								data-logofixed="images/Dango1.png">
 							</a>
@@ -71,7 +71,7 @@ ul li {
 						<div class="wrap_menu p-l-45 p-l-0-xl">
 							<nav class="menu">
 								<ul class="main_menu">
-									<li><a href="index.html">당고</a></li>
+									<li><a href="index.jsp">당고</a></li>
 
 									<div style="text-align: center" class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
@@ -97,7 +97,7 @@ ul li {
 										</div>
 									</div>
 
-									<li><a href="survey.html">당신이 고르는 한끼</a></li>
+									<li><a href="survey.jsp">당신이 고르는 한끼</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -118,12 +118,12 @@ ul li {
 		</header>
 
 		<div class="my-box"
-			style="display: inline-block; text-align: center; background-color: ivory; margin-top: 150px; border: 2px solid white; padding: 10px; width: 1000px; height: 1000px; top: 50%; left: 50%;">
+			style="display: inline-block; text-align: center; margin-top:120px;">
 
 			<table style="display: inline-block;">
 				<tr align="center">
 					<td><br> <br>
-						<h1 align="center" style="font-size: 80px;">당 신 이 고 르 는 한 끼</h1> <br>
+						<h1 align="center" style="font-size: 80px;">당신이 고르는 한끼</h1> <br>
 						<br> <br> <br></td>
 					<td></td>
 				</tr>
@@ -137,7 +137,7 @@ ul li {
 				</tr>
 				<tr>
 					<td class="answer">
-						<form action="/action_page.php">
+						<form action="result.jsp">
 							  <input type="radio" id="east" name="location" value="east"><label
 								for="east">동구</label>   <input type="radio" id="gwang"
 								name="location" value="gwang"><label for="gwang">광산구</label>
@@ -146,7 +146,6 @@ ul li {
 								name="location" value="west"><label for="west">서구</label>
 							<input type="radio" id="north" name="location" value="north"><label
 								for="north">북구</label> <br> <br>
-						</form>
 					</td>
 				<tr>
 					<td>
@@ -155,7 +154,6 @@ ul li {
 				</tr>
 				<tr>
 					<td class="answer">
-						<form action="/action_page.php">
 							  <input type="radio" id="korea" name="like" value="korea"><label
 								for="korea">한식 (분식 포함)</label> <input type="radio" id="china"
 								name="like" value="china"><label for="china">중식
@@ -174,7 +172,7 @@ ul li {
 				</tr>
 				<tr>
 					<td class="answer">
-						<form action="/action_page.php">
+						<form>
 							  <input type="radio" id="korea1" name="hate" value="korea"><label
 								for="korea1">한식 (분식 포함)</label> <input type="radio" id="china1"
 								name="hate" value="china"><label for="china1">중식</label>
@@ -194,7 +192,7 @@ ul li {
 				</tr>
 				<tr>
 					<td class="answer">
-						<form action="/action_page.php">
+						<form>
 							  <input type="radio" id="friend" name="with" value="friend"><label
 								for="friend">친구</label>  <input type="radio" id="couple"
 								name="with" value="couple"><label for="couple">연인</label>
@@ -214,7 +212,9 @@ ul li {
 
 
 			<tr style="text-align: center; margin-bottom: 100px;">
+				<form action="result.jsp">
 				<button type="submit">보내기</button>
+				</form>
 			</tr>
 			<br> <br>
 		</div>
