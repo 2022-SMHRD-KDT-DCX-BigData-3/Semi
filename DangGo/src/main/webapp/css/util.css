@@ -3358,6 +3358,14 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	text-transform: uppercase;
 	line-height: 1.8;
 }
+.txt36 {
+	font-family: EF_hyunygothic;
+	font-weight: 400;
+	font-size: 30px;
+	color: #333333;
+	text-transform: uppercase;
+	line-height: 1.8;
+}
 
 
 /*[ Color ]
@@ -3557,6 +3565,11 @@ SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE SHAPE
 
 .size38 {
 	max-width: 190px;
+}
+
+.size39 {
+	width: 900px;
+	height: 450px;
 }
 
 /*[ Background Color ]
