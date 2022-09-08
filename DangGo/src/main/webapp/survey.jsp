@@ -42,19 +42,20 @@
 
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>Question</title>
 <style>
 ul li {
 	list-style-type: none;
-	float:left;
+	float: left;
 }
 </style>
 </head>
-<body
-	style="background-image: url(images/back.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
+<body style="background-color: white;">
+
 	<div style="text-align: center">
-		<header style="width: 100%; bottom: 100%">
+		<header style="position: fixed; width: 100%; bottom: 100%">
 			<!-- Header desktop -->
 			<div class="wrap-menu-header gradient1 trans-0-4">
 				<div class="container h-full">
@@ -66,9 +67,12 @@ ul li {
 								data-logofixed="images/Dango1.png">
 							</a>
 						</div>
+						<div class="box">
 
+							<p class="result"></p>
+						</div>
 						<!-- Menu -->
-						<div class="wrap_menu p-l-45 p-l-0-xl">
+						<div "class="wrap_menu p-l-45 p-l-0-xl">
 							<nav class="menu">
 								<ul class="main_menu">
 									<li><a href="index.jsp">당고</a></li>
@@ -118,22 +122,21 @@ ul li {
 		</header>
 
 		<div class="my-box"
-			style="display: inline-block; text-align: center; margin-top:120px;">
+			style="display: inline-block; text-align: center; margin-top: 120px;">
 
 			<table style="display: inline-block;">
 				<tr align="center">
 					<td><br> <br>
-						<h1 align="center" style="font-size: 80px;">당신이 고르는 한끼</h1> <br>
-						<br> <br> <br></td>
+						<h1 class="hanggi" align="center" style="font-size: 80px;">당신이
+							고르는 한끼</h1> <br> <br> <br> <br></td>
 					<td></td>
 				</tr>
 				<tr>
 					<form action="collection">
 						<td>
-						
+
 							<h2 class="who">1. 어디서 드실건가요?</h2> <br>
 						</td>
-						
 				</tr>
 				<tr>
 					<td class="answer">
@@ -153,16 +156,15 @@ ul li {
 					</td>
 				</tr>
 				<tr>
-					<td class="answer">
-							  <input type="radio" id="korea" name="like" value="korea"><label
-								for="korea">한식 (분식 포함)</label> <input type="radio" id="china"
-								name="like" value="china"><label for="china">중식
-							</label> <input type="radio" id="japan" name="like" value="japan"><label
-								for="japan">일식</label> <input type="radio" id="america"
-								name="like" value="america"><label for="america">양식</label>
-							<br> <br>
+					<td class="answer">  <input type="radio" id="korea"
+						name="like" value="korea"><label for="korea">한식
+							(분식 포함)</label> <input type="radio" id="china" name="like" value="china"><label
+						for="china">중식 </label> <input type="radio" id="japan" name="like"
+						value="japan"><label for="japan">일식</label> <input
+						type="radio" id="america" name="like" value="america"><label
+						for="america">양식</label> <br> <br>
 						</form>
-						
+
 					</td>
 				</tr>
 				<tr>
@@ -213,7 +215,7 @@ ul li {
 
 			<tr style="text-align: center; margin-bottom: 100px;">
 				<form action="result.jsp">
-				<button type="submit">보내기</button>
+					<button type="submit">보내기</button>
 				</form>
 			</tr>
 			<br> <br>
@@ -354,6 +356,36 @@ ul li {
 			</div>
 		</div>
 	</footer>
+	<script>
+		var beforePosition = document.documentElement.scrollTop
+
+		document.addEventListener('scroll', function() {
+
+			var afterPosition = document.documentElement.scrollTop;
+
+			if (afterPosition > 50) {
+
+				if (beforePosition < afterPosition) {
+
+				} else {
+				}
+
+			} else {
+				// 평상 시
+
+			}
+			if (afterPosition > 60) {
+				$('header').attr('class', 'header-fixed');
+				$('span.dropbtn_icon').attr('style', 'color:black');
+
+			} else {
+				$('header').attr('class', 'none');
+				$('span.dropbtn_icon').attr('style', 'color:white');
+
+			}
+
+		});
+	</script>
 </body>
 </html>
 
