@@ -4,12 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 
 import com.smhrd.model.ResDAO;
 import com.smhrd.model.ResDTO;
@@ -35,7 +34,8 @@ public class listResCon extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		//로그인 성공/실패 상관없이 무조건 메인으로 이동
-		response.sendRedirect("rest.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("rest.jsp");
+		rd.forward(request, response);
 		
 		
 		

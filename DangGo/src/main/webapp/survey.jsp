@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -129,8 +130,10 @@ ul li {
 				<tr>
 					<form action="collection">
 						<td>
+						
 							<h2 class="who">1. 어디서 드실건가요?</h2> <br>
 						</td>
+						
 				</tr>
 				<tr>
 					<td class="answer">
@@ -161,6 +164,7 @@ ul li {
 								name="like" value="america"><label for="america">양식</label>
 							<br> <br>
 						</form>
+						
 					</td>
 				</tr>
 				<tr>

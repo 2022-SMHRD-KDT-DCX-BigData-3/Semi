@@ -42,7 +42,7 @@
 				
 			}
 			
-			@keyframes fadeout {
+			@keyframes out {
 				/* 효과를 동작시간 동안 0 ~ 1까지 */ 
 				from { 
 				   opacity:1;
@@ -87,7 +87,7 @@
 								</li>
 
 								<li>
-									<a href="reservation.html">우리 동네 맛집 소개</a>
+									<a href="rest.jsp">우리 동네 맛집 소개</a>
 								</li>
 
 								<li>
@@ -119,6 +119,10 @@
                 <h1 align="center" style="font-size: 80px;" id="test"> 당신이 먹고 싶은 음식은 ?</h1>
             <br><br><br><br></td> 
             <td>
+            <%if("동구".equals("동구")&&"한식(분식포함)".equals("한식(분식포함)")) {%>
+							<%out.print("당신이 선택한 동구의 한식 맛집입니다.");}
+							else if(){
+						}%>
                 </td>
                 </tr>
                 </table>
