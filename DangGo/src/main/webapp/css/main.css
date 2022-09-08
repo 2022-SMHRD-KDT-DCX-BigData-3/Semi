@@ -141,6 +141,14 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
 
+.hanggi {
+	font-family: GmarketSansMedium;
+  font-weight: 400;
+	line-height: 1.7;
+	color: orange;
+	margin: 0px;
+}
+
 p {
 	font-family: Montserrat;
   font-weight: 400;
@@ -574,12 +582,16 @@ input[type="date" i] {
   position: relative;
 }
 
+
+
 .main_menu > li {
   padding-top: 10px;  
   padding-bottom: 10px; 
   margin-left: 10px;
   margin-right: 10px;
 }
+
+
 
 .main_menu > li > a {
   font-family: Montserrat;
@@ -590,9 +602,16 @@ input[type="date" i] {
   padding: 15px;
 }
 
+
+
 .header-fixed .main_menu > li > a {
   color: #222222;
 }
+
+.header-fixed .main_menu > li > a {
+  color: #222222;
+}
+
 
 .main_menu > li:hover > a {
   color: #ec1d25;

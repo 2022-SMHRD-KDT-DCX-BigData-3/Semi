@@ -40,7 +40,14 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+	<style>
+ul li {
+	list-style-type: none;
+	float:left;
+}
+</style>
 </head>
+
 <body class="animsition">
 
 	<%
@@ -60,66 +67,74 @@
 		}
 	}
 	%>
-	<!-- Header -->
-	<header>
-		<!-- Header desktop -->
-		<div class="wrap-menu-header gradient1 trans-0-4">
-			<div class="container h-full">
-				<div class="wrap_header trans-0-3">
-					<!-- Logo -->
-					<div class="logo">
-						<a href="index.html">
-							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
-						</a>
+	
+
+<body
+	style="background-image: url(images/back.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
+	<div style="text-align: center">
+		<header style="width: 100%; bottom: 100%">
+			<!-- Header desktop -->
+			<div class="wrap-menu-header gradient1 trans-0-4">
+				<div class="container h-full">
+					<div class="wrap_header trans-0-3">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="index.jsp"> <img src="images/Dango1.png"
+								width="100px" height="100px" alt="IMG-LOGO"
+								data-logofixed="images/Dango1.png">
+							</a>
+						</div>
+
+						<!-- Menu -->
+						<div class="wrap_menu p-l-45 p-l-0-xl">
+							<nav class="menu">
+								<ul class="main_menu">
+									<li><a href="index.jsp">당고</a></li>
+
+									<div style="text-align: center" class="dropdown">
+										<button style="width: 200px;" class="dropbtn">
+											<span class="dropbtn_icon">당고 소개</span>
+										</button>
+										<div style="margin-left: 20%;" class="dropdown-content">
+											<a href="#">이용방법</a>
+										</div>
+									</div>
+
+									<div class="dropdown">
+										<button style="width: 200px;" class="dropbtn">
+											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+										</button>
+										<div style="width: 400px;" class="dropdown-content address">
+											<ul>
+												<li><a href="#">동구</a></li>
+												<li><a href="#">서구</a></li>
+												<li><a href="#">남구</a></li>
+												<li><a href="#">북구</a></li>
+												<li><a href="#">광산구</a></li>
+											</ul>
+										</div>
+									</div>
+
+									<li><a href="survey.jsp">당신이 고르는 한끼</a></li>
+								</ul>
+							</nav>
+						</div>
+
+						<!-- Social -->
+						<div class="social flex-w flex-l-m p-r-20">
+							<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-facebook m-l-21"
+								aria-hidden="true"></i></a> <a href="#"><i
+								class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
+
+							<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+						</div>
 					</div>
-
-					<!-- Menu -->
-					<div class="wrap_menu p-l-45 p-l-0-xl">
-						<nav class="menu">
-							<ul class="main_menu">
-								<li>
-									<a href="index.html">Home</a>
-								</li>
-
-								<li>
-									<a href="rinfo.jsp">Menu</a>
-								</li>
-
-								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
-
-								<li>
-									<a href="gallery.html">Gallery</a>
-								</li>
-
-								<li>
-									<a href="about.html">About</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-
-					<!-- Social -->
-					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
-						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
-					</div>
+					<div align="center"></div>
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
+
 
 	<!-- Sidebar -->
 	<aside class="sidebar trans-0-4">
@@ -222,7 +237,7 @@
 	<form action="listResCon" mothod="get">
 	<div class="section-gallery p-t-118 p-b-100">
 		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
-			
+			<div class="dropdown">
 			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">
 				동구
 			</button>
