@@ -24,7 +24,7 @@ public class ResDAO {
 		return list;
 	}
 	
-	public List<ResDTO> listResLoc(String raddr) {
+	public List<ResDTO> listLoc(String raddr) {
 		List<ResDTO> list = new ArrayList<ResDTO>();
 		System.out.println("TEst2"+sqlSessionFactory);
 		SqlSession session = sqlSessionFactory.openSession(true);
