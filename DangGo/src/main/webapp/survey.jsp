@@ -119,6 +119,7 @@ ul li {
 					<div align="center"></div>
 				</div>
 			</div>
+			</div>
 		</header>
 
 		<div class="my-box"

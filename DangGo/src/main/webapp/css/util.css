@@ -3053,6 +3053,40 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	letter-spacing: 3px;
 }
 
+.tit11 {
+	font-family: GmarketSansMedium;
+	font-weight: 700;
+	font-size: 100px;
+	line-height: 1.2;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	word-spacing: 6px;
+	
+}
+.tit12 {
+	font-family: GmarketSansMedium;
+	font-weight: 700;
+	font-size: 70px;
+	line-height: 1.2;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	word-spacing: 6px;
+	
+}
+.tit13 {
+	font-family: GmarketSansMedium;
+	font-weight: 500;
+	font-size: 50px;
+	line-height: 1.2;
+	color: orange;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	word-spacing: 6px;
+	
+}
+
 /*[ Text ]
 -----------------------------------------------------------
 */
@@ -3359,7 +3393,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	line-height: 1.8;
 }
 .txt36 {
-	font-family: EF_hyunygothic;
+	font-family: GmarketSansMedium;
 	font-weight: 400;
 	font-size: 30px;
 	color: #333333;
@@ -3367,7 +3401,66 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	line-height: 1.8;
 }
 
+.txt37 {
+	font-family: GmarketSansMedium;
+	font-weight: 900;
+	font-size: 30px;
+	color: #007bff;
+	line-height: 8;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+.txt38 {
+	font-family: GmarketSansMedium;
+	font-weight: 300;
+	font-size: 20px;
+	color: #FF7F27;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.txt39 {
+	font-family: GmarketSansMedium;
+	font-weight: 400;
+	font-size: 20px;
+	color: #666666;
+	line-height: 1.7;
+}
+.txt40 {
+	font-family: GmarketSansMedium;
+	font-weight: 300;
+	font-size: 50px;
+	color: #FF7F27;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.txt41 {
+	font-family: GmarketSansMedium;
+	font-weight: 300;
+	font-size: 30px;
+	color: #333333;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
 
+.txt42 {
+	font-family: GmarketSansMedium;
+	font-weight: 300;
+	font-size: 30px;
+	color: #333333;
+	line-height: 1.4;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.txt43 {
+	font-family: GmarketSansMedium;
+	font-weight: 400;
+	font-size: 13px;
+	color: #666666;
+	line-height: 1.7;
+}
 /*[ Color ]
 -----------------------------------------------------------
 */
@@ -3719,6 +3812,10 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 
 .bg3-pattern {
 	background-image: url(../images/icons/pattern3.png);
+  	background-repeat: repeat;
+}
+.bg4-pattern {
+	background-image: url(../images/icons/pattern4.png);
   	background-repeat: repeat;
 }
 

@@ -211,3 +211,7 @@ function runScripts(data, pos) {
           
     }
 }
+
+$(" #services ").click(function () {
+  $(" #s-d ").toggleClass('show');
+})
