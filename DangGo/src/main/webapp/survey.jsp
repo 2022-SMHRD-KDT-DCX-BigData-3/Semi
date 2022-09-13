@@ -43,7 +43,8 @@
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
 <title>Question</title>
 <style>
 ul li {
@@ -107,47 +108,44 @@ ul li {
 						</div>
 
 						<!-- Social -->
-						<div class="social flex-w flex-l-m p-r-20">
-							<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-							<a href="#"><i class="fa fa-facebook m-l-21"
-								aria-hidden="true"></i></a> <a href="#"><i
-								class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
-							<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
-						</div>
-					</div>
+						<form action="/search/result" method="GET" class="search">
+			                <input type="text" id="searchWord" name="searchWord" 
+			                    maxlength="50" size="20">
+			                <!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
+			                <button class="searchButton">
+			                    <img class="searchButtonImg" alt="Submit Form" src="images/icons/searicon.png" width="30" height="30"/>
+			                </button>
+		                </form>
 					<div align="center"></div>
 				</div>
 			</div>
 		</header>
 
 		<div class="my-box"
-			style="display: inline-block; text-align: center; margin-top: 120px;">
+			style="display: inline-block; text-align: center; margin-top: 100px;">
 
 			<table style="display: inline-block;">
 				<tr align="center">
 					<td><br> <br>
-						<h1 class="hanggi" align="center" style="font-size: 80px;">당신이
-							고르는 한끼</h1> <br> <br> <br> <br></td>
+						<h1 class="hanggi" align="center" style="font-size: 70px;">당신이
+							고르는 한끼</h1> <br> <br></td>
 					<td></td>
 				</tr>
 				<tr>
-					<form action="collection">
-						<td>
+					<td>
 
-							<h2 class="who">1. 어디서 드실건가요?</h2> <br>
-						</td>
+						<h2 class="who">1. 어디서 드실건가요?</h2> <br>
+					</td>
 				</tr>
 				<tr>
 					<td class="answer">
-						<form action="result.jsp">
-							  <input type="radio" id="east" name="location" value="east"><label
+							  <input type="radio" id="east" name="location" value="동구"><label
 								for="east">동구</label>   <input type="radio" id="gwang"
-								name="location" value="gwang"><label for="gwang">광산구</label>
-							  <input type="radio" id="south" name="location" value="south"><label
+								name="location" value="광산구"><label for="gwang">광산구</label>
+							  <input type="radio" id="south" name="location" value="남구"><label
 								for="south">남구</label> <input type="radio" id="west"
-								name="location" value="west"><label for="west">서구</label>
-							<input type="radio" id="north" name="location" value="north"><label
+								name="location" value="서구"><label for="west">서구</label>
+							<input type="radio" id="north" name="location" value="북구"><label
 								for="north">북구</label> <br> <br>
 					</td>
 				<tr>
@@ -157,16 +155,16 @@ ul li {
 				</tr>
 				<tr>
 					<td class="answer">  <input type="radio" id="korea"
-						name="like" value="korea"><label for="korea">한식
-							(분식 포함)</label> <input type="radio" id="china" name="like" value="china"><label
+						name="like" value="한식"><label for="korea">한식
+							(분식 포함)</label> <input type="radio" id="china" name="like" value="중식"><label
 						for="china">중식 </label> <input type="radio" id="japan" name="like"
-						value="japan"><label for="japan">일식</label> <input
-						type="radio" id="america" name="like" value="america"><label
-						for="america">양식</label> <br> <br>
-						</form>
+						value="일식"><label for="japan">일식</label> <input
+						type="radio" id="america" name="like" value="양식"><label
+						for="america">양식</label> 
 
 					</td>
 				</tr>
+				  
 				<tr>
 					<td>
 						<h2 class="who">3. 내가 지금 가장 먹고 싶지 않은 것은?</h2> <br>
@@ -209,16 +207,16 @@ ul li {
 				</tr>
 				</tr>
 				</tr>
+			
 			</table>
-
-
-
-			<tr style="text-align: center; margin-bottom: 100px;">
-				<form action="result.jsp">
+			<tr style="text-align: center; ">
+				<form name="nangnang" method="post" accept-charset="utf-8" action="javascript:sendData();">
+					<input type='hidden' id='loc' name='loc'/>
+					<input type='hidden' id='like' name='like'/>
 					<button type="submit">보내기</button>
 				</form>
 			</tr>
-			<br> <br>
+			<br><br>
 		</div>
 		<br> <br>
 
@@ -357,6 +355,7 @@ ul li {
 		</div>
 	</footer>
 	<script>
+    
 		var beforePosition = document.documentElement.scrollTop
 
 		document.addEventListener('scroll', function() {
@@ -385,6 +384,45 @@ ul li {
 			}
 
 		});
+		function sendData(){
+			var rdoLocation=document.getElementsByName("location");
+			var rdoLike=document.getElementsByName("like");
+			
+			
+			var locationVal='';
+			var likeVal='';
+			for(var i=0;i<rdoLocation.length;i++){
+				if(rdoLocation[i].checked){
+					locationVal=rdoLocation[i].value;
+					break;
+				}
+			}
+			for(var i=0;i<rdoLike.length;i++){
+				if(rdoLike[i].checked){
+					likeVal=rdoLike[i].value;
+					break;
+				}
+			}
+			
+			if("" ==locationVal){
+				alert("어디서 드실건가요?");
+				return;
+			}
+			
+			if("" ==likeVal){
+				alert("내가 지금 가장 먹고 싶은 것은?");
+				return;
+			}
+			
+			var flyform=document.nangnang;
+			//flyform.method="post";
+			flyform.loc.value=locationVal;
+			flyform.like.value=likeVal;
+			flyform.action="/DangGo/resultCon";
+			flyform.submit();
+			//alert(locationVal+"에서 "+likeVal+"먹는다.");
+			
+		}
 	</script>
 </body>
 </html>

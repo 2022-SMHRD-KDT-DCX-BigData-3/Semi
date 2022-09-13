@@ -102,20 +102,27 @@ ul li {
 						</div>
 
 						<!-- Social -->
-						<div class="social flex-w flex-l-m p-r-20">
-							<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-							<a href="#"><i class="fa fa-facebook m-l-21"
-								aria-hidden="true"></i></a> <a href="#"><i
-								class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
-							<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
-						</div>
+						<form action="/search/result" method="GET" class="search">
+			                <input type="text" id="searchWord" name="searchWord" 
+			                    maxlength="50" size="20">
+			                <!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
+			                <button class="searchButton">
+			                    <img class="searchButtonImg" alt="Submit Form" src="images/icons/searicon.png" width="30" height="30"/>
+			                </button>
+		                </form>
 					</div>
 					<div align="center"></div>
 				</div>
 			</div>
 		</header>
 		</div>
+		
+		
+		
+		
+		
+		
+		
 		</body>
 		</html>
 		

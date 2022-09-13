@@ -1,4 +1,4 @@
-<%@page import="org.apache.ibatis.reflection.*"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ResDTO"%>
 <%@page import="com.smhrd.model.ResDAO"%>
@@ -42,21 +42,17 @@
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
-
 	<%
-	
-	ArrayList<ResDTO> list = new ArrayList<>();
-	list = (ArrayList<ResDTO>)request.getAttribute("list");
+	List<ResDTO> list = new ArrayList<>();
+	list = (List<ResDTO>)request.getAttribute("list");
 	
 	
 	
 	int cnt = 0;
 	if(list != null){
 		cnt=1;
-		System.out.println("TEstRest");
 		for(int i=0;i<list.size();i++){
 			System.out.println(list.get(i).getRname());
-			System.out.println(list.get(i).getRimg());
 		}
 	}
 	%>
@@ -129,7 +125,7 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="rest.jsp" class="txt19">Home</a>
+				<a href="index.html" class="txt19">Home</a>
 			</li>
 
 			<li class="t-center m-b-13">
@@ -224,34 +220,25 @@
 		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
 			
 			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">
-				남구
-			</button>
-				</form>
-				
-			<form action="DongGuCon" method="get">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".interior" name="raddr" value="남구">
 				동구
 			</button>
-				</form>
-
-			<form action="SeoguCon">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".food">
-				서구
+				
+				
+			<button class="label-gallery txt26 trans-0-4" data-filter=".interior">
+				남구
 			</button>
-			</form>
 
-
-			<form action="BukGuCon">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".events">
+			<button class="label-gallery txt26 trans-0-4" data-filter=".food">
 				북구
 			</button>
-			</form>
 
-			<form action="GwangsanCon">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".guests">
+			<button class="label-gallery txt26 trans-0-4" data-filter=".events">
 				광산구
 			</button>
-			</form>
+
+			<button class="label-gallery txt26 trans-0-4" data-filter=".guests">
+				서구
+			</button>
 		</div>
 	
 	
@@ -260,24 +247,15 @@
 		<div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
 			<!--1 - -->
 			<!-- 식당목록 페이지 -->
-			<%
-			if(cnt != 0){
-			for (int i=0; i<list.size(); i++){ 
-				list.get(i);
-			}}%>
-			
-			
-			
-			<%if(cnt !=0){for(int i =0; i<list.size(); i++){ %>
+			<%for(int i =0; i<21; i++){ %>
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-				<img src="images/<%=list.get(i).getRimg()%>" alt="IMG-GALLERY"><!-- 식당사진 들어갈 부분 -->
-					<% System.out.print(request.getContextPath()); %>
-					<a href="#"><center><%=list.get(i).getRname()%></center></a>
+				<img src="images/another.jpg" alt="IMG-GALLERY"><!-- 식당사진 들어갈 부분 -->
+					<center>어나더키친</center>
 				<div class="overlay-item-gallery trans-0-4 flex-c-m">
 					<a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
 				</div>
 			</div>
-	<%} }%>
+	<%} %>
 			
 
 		<div class="pagination flex-c-m flex-w p-l-15 p-r-15 m-t-24 m-b-50">
@@ -286,7 +264,7 @@
 			<a href="#" class="item-pagination flex-c-m trans-0-4">3</a>
 		</div>
 	</div>
-
+</form>
 
 	<!-- Sign up -->
 	<div class="section-signup bg1-pattern p-t-85 p-b-85">

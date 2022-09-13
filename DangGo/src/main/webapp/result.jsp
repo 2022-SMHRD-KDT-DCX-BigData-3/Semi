@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ResultSetDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -95,6 +97,8 @@ to {
 <%
 	//survry 에서 넘긴 데이터를(listResCon) 받아와서
 	//-->listResCon 을 result.jsp 에서 받아서 출력!
+	List<ResultSetDTO> list=(List<ResultSetDTO>)request.getAttribute("resDto");
+
 %>
 <body style="background-image: url(images/back.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
 	<div style="text-align: center">
@@ -140,12 +144,6 @@ to {
 											</ul>
 										</div>
 									</div>
-
-
-								<li>
-									<a href="rest.jsp">우리 동네 맛집 소개</a>
-								</li>
-
 									<li><a href="survey.jsp">당신이 고르는 한끼</a></li>
 								</ul>
 							</nav>
@@ -153,37 +151,38 @@ to {
 
 
 						<!-- Social -->
-					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
-						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
-					</div>
+					<form action="/search/result" method="GET" class="search">
+			                <input type="text" id="searchWord" name="searchWord" 
+			                    maxlength="50" size="20">
+			                <!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
+			                <button class="searchButton">
+			                    <img class="searchButtonImg" alt="Submit Form" src="images/icons/searicon.png" width="30" height="30"/>
+			                </button>
+		                </form>
 				</div>
 				</div>
 				</div>
 				
                 <div align="center">
                 
-                <div style="display:block;text-align:center;margin-top:150px;">
-    <table style="display:inline-block">
-        <tr align="center">    
-             <td id="test2">
-             <br><br><br><br><br><br>
-                <h1 align="center" style="font-size: 80px;" id="test"> 당신이 먹고 싶은 음식은 ?</h1>
-            <br><br><br><br></td>
-             
-            <td>
-            
-            <%
-            /* if("동구".equals("동구")&&"한식(분식포함)".equals("한식(분식포함)")) {
-							out.print("당신이 선택한 동구의 한식 맛집입니다.");
-							
-						} */
-						%>
-                </td>
-                </tr>
+                <div style="display:block;text-align:center;margin-top:100px;">
+				    <table style="display:inline-block">
+				        <tr align="center">    
+				            <td id="test2">
+				             <br><br><br>
+				                 <h1 align="center" style="font-size: 100px;" id="test"> 당신이 먹고 싶은 음식은 ?</h1>
+				             <br><br><br><br></td>
+				        </tr>
+				        <tr><td><br></td></tr>
+		        <%
+		        int cnt=1;
+		    	for(ResultSetDTO bean:list){
+				%>
+		                <tr ><td id='tdList_<%=cnt %>' align='left'></td></tr>
+		        <%
+		        	cnt++;
+		    	}
+		        %>        
                 </table>
             </div>
 			</div>
@@ -200,13 +199,27 @@ to {
 	
 	function test(){
 		var h1 = document.createElement("h1");
-		var h1Text = document.createTextNode( '당신이 선택한 동구의 한식 맛집입니다' );
+		var location='<%=request.getAttribute("location")%>';
+		var kindFood='<%=request.getAttribute("kindFood")%>';
+
+		var h1Text = document.createTextNode( '당신이 선택한 '+location+'의 '+kindFood+' 맛집입니다' );
 		h1.appendChild(h1Text);
 		
 		document.getElementById("test2").appendChild(h1);
+        <%
+        String location="";
+        int index=1;
+    	for(ResultSetDTO bean:list){
+    		location=bean.getRes_addr();
+    	%>
+		document.getElementById('tdList_<%=index%>').innerText='<%=index%>. '+'<%=location%>';
+    	<%
+    		index++;
+    	}
+		%>
 	}
-    
 	</script>
+	
 	<br>
 	<br>
 	<br>

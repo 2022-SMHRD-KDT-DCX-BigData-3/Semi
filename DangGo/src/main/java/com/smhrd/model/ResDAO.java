@@ -24,6 +24,16 @@ public class ResDAO {
 		return list;
 	}
 	
+	public List<ResDTO> listResLoc(String raddr) {
+		List<ResDTO> list = new ArrayList<ResDTO>();
+		System.out.println("TEst2"+sqlSessionFactory);
+		SqlSession session = sqlSessionFactory.openSession(true);
+		 list = session.selectList("listLoc", raddr);
+		session.close();
+		
+		return list;
+	}
+	
 	public ResDTO listRinfo(ResDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		ResDTO info = session.selectOne("listRinfo", dto);
@@ -39,7 +49,13 @@ public class ResDAO {
 		return bInfo;
 	}
 	
-	
+	public ResDTO ResInfo(ResDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ResDTO rinfo = session.selectOne("ResInfo", dto);
+		session.close();
+		
+		return rinfo;
+	}
 	
 	
 	

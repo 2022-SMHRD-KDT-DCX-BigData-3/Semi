@@ -5,22 +5,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.smhrd.mapper.DangGoMapper">
 	
-	<select id="listRes" resultType="ResDTO">
+<select id="Namgu" parameterType="String" resultType="ResDTO">
+      select menu_img1,res_name,loc from (select tbl_menu.menu_img1, tbl_restaurant.res_name, loc from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq) where loc=#{loc} 
+   </select>
+
+
+<select id="ResInfo" parameterType="String" resultType="ResDTO">
+	select res_name, res_addr, res_runtime, res_convenient, res_tel, menu_name, menu_img1 from tbl_restaurant, tbl_menu where tbl_restaurant.res_seq = tbl_menu.res_seq;
+</select>
+
+
+
+
+
+	<select id ="listLoc" parameterType ="String" resultType ="ResDTO">
 		select tbl_menu.menu_img1, tbl_restaurant.res_name, substr(tbl_restaurant.res_addr,4,3) from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq
-		
+		and substr(res_addr,4,2)= #{raddr}
+
 	</select>
-	
-	
-	<select id="BukGu" resultType="ResDTO">
-	select tbl_menu.menu_img1, tbl_restaurant.res_name, substr(tbl_restaurant.res_addr,4,3) from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq
-	</select>
-	
-	
-	
-<!-- 	
-	<select id="listRinfo" resultType="Menu">
-		select * from tbl_restaurant
-	</select> -->
+ 	
+	<select id="restultInfo" parameterType="com.smhrd.model.ResultSetDTO" resultType="com.smhrd.model.ResultSetDTO">
+		select * from tbl_restaurant where res_addr like '%'||#{res_addr}||'%' and res_categoy=#{res_categoy}
+	</select> 
+
 	
 	
 </mapper>
