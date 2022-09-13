@@ -7,9 +7,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	
-<select id="Namgu" parameterType="String" resultType="ResDTO">
-      select menu_img1,res_name,loc from (select tbl_menu.menu_img1, tbl_restaurant.res_name, loc from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq) where loc=#{loc} 
-   </select>
 
 
 <select id="ResInfo" resultType="ResDTO">
@@ -22,9 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id ="listLoc" parameterType ="String" resultType ="ResDTO">
-		select tbl_menu.menu_img1, tbl_restaurant.res_name, substr(tbl_restaurant.res_addr,4,3) from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq
-		and substr(res_addr,4,2)= #{raddr}
-
+		select menu_img1,res_name,loc from (select tbl_menu.menu_img1, tbl_restaurant.res_name, loc from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq) where loc=#{raddr}
 	</select>
  	
 	<select id="restultInfo" parameterType="com.smhrd.model.ResultSetDTO" resultType="com.smhrd.model.ResultSetDTO">

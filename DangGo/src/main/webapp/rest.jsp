@@ -219,35 +219,35 @@
 
 
 	<!-- Gallery -->
-	<form action="listResCon" method="get">
+	
 	<div class="section-gallery p-t-118 p-b-100">
 		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
-			
+			<form action="listResCon" method="get" name="raddr" value="남구">
 			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">
 				남구
 			</button>
 				</form>
 				
-			<form action="DongGuCon" method="get">
+			<form action="listResCon" method="get" name="raddr" value="동구">
 			<button class="label-gallery txt26 trans-0-4" data-filter=".interior" name="raddr" value="남구">
 				동구
 			</button>
 				</form>
 
-			<form action="SeoguCon">
+			<form action="listResCon" method="get" name="raddr" value="서구">
 			<button class="label-gallery txt26 trans-0-4" data-filter=".food">
 				서구
 			</button>
 			</form>
 
 
-			<form action="BukGuCon">
+			<form action="listResCon" method="get" name="raddr" value="북구">
 			<button class="label-gallery txt26 trans-0-4" data-filter=".events">
 				북구
 			</button>
 			</form>
 
-			<form action="GwangsanCon">
+			<form action="listResCon" method="get" name="raddr" value="광산구">
 			<button class="label-gallery txt26 trans-0-4" data-filter=".guests">
 				광산구
 			</button>
