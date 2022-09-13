@@ -17,6 +17,11 @@ import com.smhrd.model.ResDTO;
 
 
 public class listResCon extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1516032983939079694L;
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("Test");

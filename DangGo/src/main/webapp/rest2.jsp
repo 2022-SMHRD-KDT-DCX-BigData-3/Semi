@@ -215,7 +215,7 @@
 
 
 	<!-- Gallery -->
-	<form action="listResCon" mothod="get">
+	<form action="listResCon" method="get">
 	<div class="section-gallery p-t-118 p-b-100">
 		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
 			

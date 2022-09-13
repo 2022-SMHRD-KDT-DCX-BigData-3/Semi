@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @RequiredArgsConstructor
-public class ResDTO {
+public class ResultDTO {
 	@NonNull
 	private String rseq;
 	@NonNull
@@ -27,23 +27,6 @@ public class ResDTO {
 	private String lati;
 	@NonNull
 	private String longi;
-	private String rimg;
-
-	public ResDTO(String raddr) {
-		this.raddr = raddr;
-	}
-	public ResDTO(String rimg, String rname, String raddr) {
-		this.rimg = rimg;
-		this.rname = rname;
-		this.raddr = raddr;
-		
-	}
-	
-	public ResDTO(String loc, String like) {
-		this.raddr = raddr;
-		
-	}
-	
-	
+	private String rimg;	
 	
 }

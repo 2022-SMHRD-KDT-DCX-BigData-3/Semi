@@ -6,14 +6,24 @@
   <display-name>Archetype Created Web Application</display-name>
   
   
-  <servlet>
-    <servlet-name>listResCon</servlet-name>
-    <servlet-class>com.smhrd.controller.listResCon</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>listResCon</servlet-name>
-    <url-pattern>/listResCon</url-pattern>
-</servlet-mapping>
+  	<servlet>
+	    <servlet-name>listResCon</servlet-name>
+ 		<display-name>listResCon</display-name>
+	    <servlet-class>com.smhrd.controller.listResCon</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>ResultCon</servlet-name>
+ 		<display-name>ResultCon</display-name>
+	    <servlet-class>com.smhrd.controller.ResultCon</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>listResCon</servlet-name>
+	    <url-pattern>/listResCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>ResultCon</servlet-name>
+	    <url-pattern>/resultCon</url-pattern>
+	</servlet-mapping>
 </web-app>
 
 

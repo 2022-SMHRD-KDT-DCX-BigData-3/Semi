@@ -10,10 +10,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>
 	
-<!-- 	
-	<select id="listRinfo" resultType="Menu">
-		select * from tbl_restaurant
-	</select> -->
+	<select id ="listLoc" parameterType ="String" resultType ="ResDTO">
+		select tbl_menu.menu_img1, tbl_restaurant.res_name, substr(tbl_restaurant.res_addr,4,3) from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq
+		and substr(res_addr,4,2)= #{raddr}
+
+	</select>
+ 	
+	<select id="restultInfo" parameterType="com.smhrd.model.ResultSetDTO" resultType="com.smhrd.model.ResultSetDTO">
+		select * from tbl_restaurant where res_addr like '%'||#{res_addr}||'%' and res_categoy=#{res_categoy}
+	</select> 
 	
 	
 </mapper>
