@@ -13,50 +13,56 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class ResDTO {
 	@NonNull
-	private String rseq;
+	private String res_seq;
 	@NonNull
-	private String rname;
+	private String res_name;
 	@NonNull
-	private String raddr;
-	private String rtime;
-	private String rconv;
-	private String rtel;
+	private String res_addr;
+	private String res_runtime;
+	private String res_convinient;
+	private String res_tel;
 	@NonNull
-	private String rctg;
+	private String res_categoy;
 	@NonNull
-	private String lati;
+	private String latitude;
 	@NonNull
-	private String longi;
-	private String rimg;
+	private String longitude;
+	private String menu_img1;
 	private String menu_name;
+	private String menu_price;
+	private String loc;
 
 
-	public ResDTO(String raddr) {
-		this.raddr = raddr;
+	public ResDTO(String res_addr) {
+		this.res_addr = res_addr;
 	}
 	
-	public ResDTO(String rimg, String rname, String raddr) {
-		this.rimg = rimg;
-		this.rname = rname;
-		this.raddr = raddr;
+	public ResDTO(String menu_img1, String res_name, String res_addr) {
+		this.menu_img1 = menu_img1;
+		this.res_name = res_name;
+		this.loc = loc;
 		
 	}
 	
 	public ResDTO(String loc, String like) {
-		this.raddr = raddr;
+		this.loc = loc;
 		
 	}
 	
-	public ResDTO(String rname, String raddr, String rtime, String rconv, String rtel, String rimg, String menu_name) {
-		this.rname = rname;
-		this.raddr = raddr;
-		this.rtime = rtime;
-		this.rtime = rtime;
-		this.rconv = rconv;
-		this.rtel = rtel;
-		this.rimg = rimg;
+	public ResDTO(String res_name, String res_addr, String res_runtime, String res_convinient, String res_tel, String menu_name, String menu_img1, String menu_price) {
+		this.res_name = res_name;
+		this.res_addr = res_addr;
+		this.res_runtime = res_runtime;
+		this.res_convinient = res_convinient;
+		this.res_tel = res_tel;
 		this.menu_name = menu_name;
+		this.menu_img1 = menu_img1;
+		this.menu_price = menu_price;
 		
+	}
+
+	public ResDTO() {
+		super();
 	}
 	
 	

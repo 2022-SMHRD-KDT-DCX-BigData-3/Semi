@@ -50,15 +50,15 @@
 	
 	
 	
-	int cnt = 0;
+	 int cnt = 0;
 	if(list != null){
 		cnt=1;
-		System.out.println("TEstRest");
+		System.out.println("TestRest");
 		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i).getRname());
-			System.out.println(list.get(i).getRimg());
+			System.out.println(list.get(i).getRes_name());
+			System.out.println(list.get(i).getMenu_img1());
 		}
-	}
+	} 
 	%>
 	<!-- Header -->
 	<header>
@@ -270,12 +270,12 @@
 			
 			<%if(cnt !=0){for(int i =0; i<list.size(); i++){ %>
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-				<img src="images/<%=list.get(i).getRimg()%>" alt="IMG-GALLERY"><!-- 식당사진 들어갈 부분 -->
+				<a href="RestaurantInfo.jsp"><img src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a><!-- 식당사진 들어갈 부분 -->
 					<% System.out.print(request.getContextPath()); %>
-					<a href="#"><center><%=list.get(i).getRname()%></center></a>
-				<div class="overlay-item-gallery trans-0-4 flex-c-m">
+					<center><%=list.get(i).getRes_name()%></center>
+				<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
 					<a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
-				</div>
+				</div> -->
 			</div>
 	<%} }%>
 			

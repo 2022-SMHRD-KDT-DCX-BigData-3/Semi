@@ -1,8 +1,11 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ResDTO"%>
 <%@page import="com.smhrd.model.ResDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%ResDTO dto = (ResDTO)request.getAttribute("info"); %>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%">
 <head>
@@ -89,11 +92,12 @@ ul li {
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
-												<li><a href="#">동구</a></li>
-												<li><a href="#">서구</a></li>
-												<li><a href="#">남구</a></li>
-												<li><a href="#">북구</a></li>
-												<li><a href="#">광산구</a></li>
+											
+												<li><a href="rest.jsp">동구</a></li>
+												<li><a href="rest.jsp">서구</a></li>
+												<li><a href="rest.jsp">남구</a></li>
+												<li><a href="rest.jsp">북구</a></li>
+												<li><a href="rest.jsp">광산구</a></li>
 											</ul>
 										</div>
 									</div>
@@ -118,9 +122,10 @@ ul li {
 			</div>
 		</header>
 		</div>	
-		<div class="info">
+		<div class="info" style="padding-top: 200px; padding-left: 10px;" align="center">
 		<%List<ResDTO> rlist = new ResDAO().ResInfo(); %>
-<%= rlist.get(0).getRname()%>
+		<%System.out.print(rlist.get(0).getMenu_img1()); %>
+		<%= rlist.get(0).getRes_name()%><%= rlist.get(0).getRes_addr()%><%= rlist.get(0).getRes_runtime()%><%= rlist.get(0).getRes_convinient()%><%= rlist.get(0).getRes_tel() %><%= rlist.get(0).getMenu_name()%><%= rlist.get(0).getMenu_price() %><img src="images/<%= rlist.get(0).getMenu_img1()%>">
 		</div>
 		</body>
 		</html>

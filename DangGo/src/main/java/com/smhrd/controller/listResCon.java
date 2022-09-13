@@ -33,10 +33,10 @@ public class listResCon extends HttpServlet {
 		
 		List<ResDTO> list = new ArrayList<>();
 		list =  dao.listLoc(raddr);
-		
-//		for(int i=0;i<list.size();i++){
-//			System.out.println(list.get(i).getRname());
-//		}
+		System.out.println(list.size());
+		for(int i=0;i<list.size();i++){
+			System.out.println(list.get(i).getRes_name());
+		}
 		
 		request.setAttribute("list", list);
 		//로그인 성공/실패 상관없이 무조건 메인으로 이동

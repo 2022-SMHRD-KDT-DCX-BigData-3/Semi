@@ -16,7 +16,6 @@ public class ResDAO {
 	//sql:select * from tbl_restaurant where res_name =#{rname} and res_categoy=#{rctg}
 	public List<ResDTO> listRes(String raddr) {
 		List<ResDTO> list = new ArrayList<ResDTO>();
-		System.out.println("TEst2"+sqlSessionFactory);
 		SqlSession session = sqlSessionFactory.openSession(true);
 		 list = session.selectList("listRes", raddr);
 		session.close();
@@ -29,6 +28,7 @@ public class ResDAO {
 		System.out.println("TEst2"+sqlSessionFactory);
 		SqlSession session = sqlSessionFactory.openSession(true);
 		 list = session.selectList("listLoc", raddr);
+		 System.out.println(list.size());
 		session.close();
 		
 		return list;
@@ -55,7 +55,6 @@ public class ResDAO {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		rlist = session.selectList("ResInfo");
 		
-		System.out.println("Test"+rlist.get(0).getRname());
 		session.close();
 		
 		return rlist;
