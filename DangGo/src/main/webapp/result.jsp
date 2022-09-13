@@ -95,7 +95,7 @@ to {
 </head>
 
 <%
-	//survry 에서 넘긴 데이터를(listResCon) 받아와서
+	//survey 에서 넘긴 데이터를(listResCon) 받아와서
 	//-->listResCon 을 result.jsp 에서 받아서 출력!
 	List<ResultSetDTO> list=(List<ResultSetDTO>)request.getAttribute("resDto");
 

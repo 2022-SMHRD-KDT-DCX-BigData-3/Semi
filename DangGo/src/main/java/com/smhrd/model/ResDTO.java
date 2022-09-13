@@ -47,7 +47,7 @@ public class ResDTO {
 		
 	}
 	
-	public void ResDTO(String rname, String raddr, String rtime, String rconv, String rtel, String rimg, String menu_name) {
+	public ResDTO(String rname, String raddr, String rtime, String rconv, String rtel, String rimg, String menu_name) {
 		this.rname = rname;
 		this.raddr = raddr;
 		this.rtime = rtime;
@@ -56,8 +56,6 @@ public class ResDTO {
 		this.rtel = rtel;
 		this.rimg = rimg;
 		this.menu_name = menu_name;
-	
-		
 		
 	}
 	

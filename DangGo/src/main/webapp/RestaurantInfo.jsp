@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.ResDTO"%>
+<%@page import="com.smhrd.model.ResDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -41,7 +44,6 @@
 
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-
 <title>RestaurantInfo</title>
 <style>
 ul li {
@@ -115,14 +117,11 @@ ul li {
 				</div>
 			</div>
 		</header>
+		</div>	
+		<div class="info">
+		<%List<ResDTO> rlist = new ResDAO().ResInfo(); %>
+<%= rlist.get(0).getRname()%>
 		</div>
-		
-		
-		
-		
-		
-		
-		
 		</body>
 		</html>
 		

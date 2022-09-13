@@ -49,12 +49,16 @@ public class ResDAO {
 		return bInfo;
 	}
 	
-	public ResDTO ResInfo(ResDTO dto) {
+	public List<ResDTO> ResInfo() {
+		
+		List<ResDTO> rlist = new ArrayList<ResDTO>();
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ResDTO rinfo = session.selectOne("ResInfo", dto);
+		rlist = session.selectList("ResInfo");
+		
+		System.out.println("Test"+rlist.get(0).getRname());
 		session.close();
 		
-		return rinfo;
+		return rlist;
 	}
 	
 	

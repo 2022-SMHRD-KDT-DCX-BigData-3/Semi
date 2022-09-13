@@ -4,14 +4,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.smhrd.mapper.DangGoMapper">
+
+
 	
 <select id="Namgu" parameterType="String" resultType="ResDTO">
       select menu_img1,res_name,loc from (select tbl_menu.menu_img1, tbl_restaurant.res_name, loc from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq) where loc=#{loc} 
    </select>
 
 
-<select id="ResInfo" parameterType="String" resultType="ResDTO">
-	select res_name, res_addr, res_runtime, res_convenient, res_tel, menu_name, menu_img1 from tbl_restaurant, tbl_menu where tbl_restaurant.res_seq = tbl_menu.res_seq;
+<select id="ResInfo" resultType="ResDTO">
+	select h1.res_name, h1.res_addr, h1.res_runtime, h1.res_convenient, h1.res_tel, h2.menu_name, h2.menu_img1 from tbl_restaurant h1, tbl_menu h2
+	where h1.res_seq = h2.res_seq
 </select>
 
 
