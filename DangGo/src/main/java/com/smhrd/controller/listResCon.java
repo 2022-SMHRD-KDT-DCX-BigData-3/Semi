@@ -32,7 +32,7 @@ public class listResCon extends HttpServlet {
 		
 		
 		List<ResDTO> list = new ArrayList<>();
-		list =  dao.listRes(raddr);
+		list =  dao.listLoc(raddr);
 		
 //		for(int i=0;i<list.size();i++){
 //			System.out.println(list.get(i).getRname());

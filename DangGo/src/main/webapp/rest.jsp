@@ -222,33 +222,33 @@
 	
 	<div class="section-gallery p-t-118 p-b-100">
 		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
-			<form action="listResCon" method="get" name="raddr" value="남구">
-			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">
+			<form action="listResCon" method="get" >
+			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*" name="raddr" value="남구">
 				남구
 			</button>
 				</form>
 				
-			<form action="listResCon" method="get" name="raddr" value="동구">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".interior" name="raddr" value="남구">
+			<form action="listResCon" method="get" >
+			<button class="label-gallery txt26 trans-0-4" data-filter=".interior" name="raddr" value="동구">
 				동구
 			</button>
 				</form>
 
-			<form action="listResCon" method="get" name="raddr" value="서구">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".food">
+			<form action="listResCon" method="get" >
+			<button class="label-gallery txt26 trans-0-4" data-filter=".food" name="raddr" value="서구">
 				서구
 			</button>
 			</form>
 
 
-			<form action="listResCon" method="get" name="raddr" value="북구">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".events">
+			<form action="listResCon" method="get" >
+			<button class="label-gallery txt26 trans-0-4" data-filter=".events" name="raddr" value="북구">
 				북구
 			</button>
 			</form>
 
-			<form action="listResCon" method="get" name="raddr" value="광산구">
-			<button class="label-gallery txt26 trans-0-4" data-filter=".guests">
+			<form action="listResCon" method="get" >
+			<button class="label-gallery txt26 trans-0-4" data-filter=".guests" name="raddr" value="광산구">
 				광산구
 			</button>
 			</form>
