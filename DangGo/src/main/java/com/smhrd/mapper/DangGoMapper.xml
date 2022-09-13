@@ -10,6 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 	</select>
 	
+	
+	<select id="BukGu" resultType="ResDTO">
+	select tbl_menu.menu_img1, tbl_restaurant.res_name, substr(tbl_restaurant.res_addr,4,3) from tbl_menu, tbl_restaurant where tbl_menu.res_seq = tbl_restaurant.res_seq
+	</select>
+	
+	
+	
 <!-- 	
 	<select id="listRinfo" resultType="Menu">
 		select * from tbl_restaurant

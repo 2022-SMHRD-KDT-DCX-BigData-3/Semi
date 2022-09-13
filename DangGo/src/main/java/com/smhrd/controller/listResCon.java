@@ -14,8 +14,6 @@ import com.smhrd.model.ResDAO;
 import com.smhrd.model.ResDTO;
 
 
-
-
 public class listResCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

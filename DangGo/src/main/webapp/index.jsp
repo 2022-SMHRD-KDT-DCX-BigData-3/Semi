@@ -65,7 +65,7 @@
                         </li>
       
                         <li>
-                          <a href="rest2.jsp">우리 동네 맛집 소개</a>
+                          <a href="rest.jsp">우리 동네 맛집 소개</a>
                         </li>
       
                         <li>

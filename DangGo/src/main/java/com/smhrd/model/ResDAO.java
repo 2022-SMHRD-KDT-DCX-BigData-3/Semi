@@ -31,6 +31,13 @@ public class ResDAO {
 		return info;
 	}
 	
+	public ResDTO BukGu(ResDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ResDTO bInfo = session.selectOne("BukGU", dto);
+		session.close();
+		
+		return bInfo;
+	}
 	
 	
 	
