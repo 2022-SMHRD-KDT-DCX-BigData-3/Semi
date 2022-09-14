@@ -1875,6 +1875,9 @@ body {padding-right: 0px !important;}
   height:100vh;
   width:45vw;
 }
+/* 리뷰 사진 제출 */
 
-
-
+.reviews {
+	width: 50%
+	
+}

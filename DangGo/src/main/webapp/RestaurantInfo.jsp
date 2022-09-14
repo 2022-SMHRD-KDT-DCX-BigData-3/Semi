@@ -4,7 +4,7 @@
 <%@page import="com.smhrd.model.ResDAO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +46,7 @@ ul li {
 	float:left;
 }
 </style>
+
 </head>
 <body style="background-color: white;">
 
@@ -76,9 +77,6 @@ ul li {
 										<button style="width: 200px;" class="dropbtn">
 											<span class="dropbtn_icon">당고 소개</span>
 										</button>
-										<div style="margin-left: 20%;" class="dropdown-content">
-											<a href="#">이용방법</a>
-										</div>
 									</div>
 
 									<div class="dropdown">
@@ -170,10 +168,10 @@ ul li {
 							<!-- 음식 사진 -->
 							
 							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="blog-detail.html">
+								<a href="rest.jsp">
 									<%List<ResDTO> rlist = new ResDAO().ResInfo(); %>
 									<img src="images/<%= rlist.get(0).getMenu_img1()%>" style="width: 400px; height: 300px;">
-									<img src="images/<%= rlist.get(0).getKeyword_img()%>"style="width: 400px; height: 300px;">
+									<img src="images/<%= rlist.get(0).getKeyword_img()%>"style="width: 400px; height: 500px;">
 								</a>
 								
 								
@@ -209,7 +207,7 @@ ul li {
 							</h4>
 
 							<p>
-								당신의 이름(닉네임)과 이메일 영수증 첨부후 리뷰를 등록해주세요
+								리뷰,이름 입력후 영수증을 첨부하여 리뷰를 등록해주세요 
 							</p>
 
 							<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"></textarea>
@@ -222,12 +220,10 @@ ul li {
 								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder=" 이름*">
 							</div>
 
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="website" placeholder="영수증 첨부">
-							</div>
+							
 
 								<form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
-									<input type="file" name="profile"> <input type="submit" name="첨부">
+									<input type="file" name="profile"><input type="submit" style="width: 50%">
 								</form>
 
 								<!-- Button3 -->
@@ -241,7 +237,13 @@ ul li {
 				<div class="col-md-4 col-lg-3">
 					<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
 						<!-- 지도 API -->
-							<a href="https://map.kakao.com/?map_type=TYPE_MAP&target=traffic&rt=474985%2C459929%2C481083%2C451380&rt1=%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%84%9C%EA%B5%AC%EC%B2%AD&rt2=%EC%A0%9C%EC%A3%BC%EC%83%9D%EA%B0%88%EB%B9%84&rtIds=14588328%2C10803708&rtTypes=PLACE%2CPLACE&transitOption=3">가는 방법</a>
+							<div style="text-align: center">
+							<a href="https://map.kakao.com/?map_type=TYPE_MAP&target=traffic&rt=474985%2C459929%2C481083%2C451380&rt1=
+							%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%84%9C%EA%B5%AC%EC%B2%AD&rt2=%EC%A0%9C%EC%A3%BC%EC%83%9D%EA%B0%88%EB%B9%84&rtIds=
+							14588328%2C10803708&rtTypes=PLACE%2CPLACE&transitOption=3">
+							<h2 class="txt44">가는 방법</h2></a>
+							</div>
+							<br>
 							<div id="map"style="width:150%;height:380px;">
 							<script type="text/javascript"
 								src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0aa6e71f7a0a47e71475daeb106b3202"></script>
