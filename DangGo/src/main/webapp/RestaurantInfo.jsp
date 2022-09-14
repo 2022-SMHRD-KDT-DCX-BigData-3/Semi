@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.BoardDAO"%>
+<%@page import="com.smhrd.model.BoardDTO"%>
 <%@page import="org.apache.ibatis.reflection.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ResDTO"%>
@@ -210,21 +212,27 @@ ul li {
 								리뷰,이름 입력후 영수증을 첨부하여 리뷰를 등록해주세요 
 							</p>
 
-							<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"></textarea>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name" placeholder="식당 명 *">
-							</div>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder=" 이름*">
-							</div>
-
 							
 
+					
+
+							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
+								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder=" 리뷰제목"<%String review_name = request.getParameter("review_name");%>>
+								
+							</div>
+		
+								
+							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
+								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="website" placeholder="Website">
+							</div>	
+								
+								
 								<form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
-									<input type="file" name="profile"><input type="submit" style="width: 50%">
+									<input type="file" name="profile">
 								</form>
+
+
+								<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"></textarea>
 
 								<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
@@ -378,93 +386,7 @@ ul li {
 
 
 						<!-- Archive -->
-						<div class="archive">
-							<h4 class="txt33 p-b-20 p-t-43">
-								Archive
-							</h4>
-
-							<ul>
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										uly 2018
-									</a>
-
-									<span class="txt29">
-										(9)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										June 2018
-									</a>
-
-									<span class="txt29">
-										(39)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										May 2018
-									</a>
-
-									<span class="txt29">
-										(29)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										April  2018
-									</a>
-
-									<span class="txt29">
-										(35)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										March 2018
-									</a>
-
-									<span class="txt29">
-										(22)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										February 2018
-									</a>
-
-									<span class="txt29">
-										(32)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										January 2018
-									</a>
-
-									<span class="txt29">
-										(21)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										December 2017
-									</a>
-
-									<span class="txt29">
-										(26)
-									</span>
-								</li>
-							</ul>
-						</div>
+						
 					</div>
 				</div>
 			</div>
