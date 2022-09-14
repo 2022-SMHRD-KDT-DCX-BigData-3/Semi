@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="ResInfo" resultType="ResDTO">
 		select h1.res_name, h1.res_addr, h1.res_runtime, h1.res_convenient,
-		h1.res_tel, h2.menu_name, h2.menu_img1, h2.menu_price from
+		h1.res_tel,h1.latitude,h1.longitude, h2.menu_name, h2.menu_img1, h2.menu_price, from
 		tbl_restaurant h1, tbl_menu h2
 		where h1.res_seq = h2.res_seq
 	</select>
