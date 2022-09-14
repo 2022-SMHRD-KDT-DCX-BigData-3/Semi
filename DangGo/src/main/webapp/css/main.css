@@ -694,6 +694,21 @@ input[type="date" i] {
   color: white;
  
 }
+.dropbtn_icon1{
+	font-family: GmarketSansMedium;
+  font-weight: 400;
+  padding : 15px;
+  width : 120px;
+  text-align: center;
+  cursor : pointer;
+  font-size : 16px;
+    text-transform: uppercase;
+  color: black;
+}
+.dropbtn_icon1:hover{
+	 color: orange;
+  text-decoration: none;
+	}
 .dropbtn_icon:hover{
 	 color: orange;
   text-decoration: none;
@@ -723,7 +738,7 @@ input[type="date" i] {
   text-decoration : none;
   color : rgb(37, 37, 37);
   font-size: 12px;
-  padding : 12px 20px;
+  padding-left: 15px;
 }
 
 .dropdown-content a:hover{
