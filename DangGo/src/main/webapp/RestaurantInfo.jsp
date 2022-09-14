@@ -116,10 +116,25 @@ ul li {
 	
 
 	<!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/bg-title-page-03.jpg);">
-		<h2 class="tit6 t-center">
-			식당 정보
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/orange.jpg);">
+		<h2 class="tit11 t-center">
+			당
 		</h2>
+		<h1 class="tit12 t-center">
+			신은 지금&nbsp;
+		</h1>
+		
+		<h2 class="tit12 t-center">
+			배가&nbsp;
+		</h2>
+		
+		<h2 class="tit11 t-center">
+			고
+		</h2>
+		<h1 class="tit12 t-center">
+			프다
+		</h1>
+		
 	</section>
 
 
@@ -650,6 +665,36 @@ ul li {
 	<script type="text/javascript" src="vendor/isotope/isotope.pkgd.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+      var beforePosition = document.documentElement.scrollTop
+
+      document.addEventListener('scroll', function() {
+
+         var afterPosition = document.documentElement.scrollTop;
+
+         if (afterPosition > 50) {
+
+            if (beforePosition < afterPosition) {
+
+            } else {
+            }
+
+         } else {
+            // 평상 시
+
+         }
+         if (afterPosition > 60) {
+            $('header').attr('class', 'header-fixed');
+            $('span.dropbtn_icon').attr('style', 'color:black');
+
+         } else {
+            $('header').attr('class', 'none');
+            $('span.dropbtn_icon').attr('style', 'color:white');
+
+         }
+
+      });
+   </script>
 
 </body>
 </html>

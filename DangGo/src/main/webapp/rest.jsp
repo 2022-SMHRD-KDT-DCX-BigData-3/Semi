@@ -346,20 +346,6 @@ ul li {
 		if (cnt != 0) {
 			for (int i = 0; i < list.size(); i++) {
 				list.get(i);
-
-			}}%>
-			
-			
-			
-			<%if(cnt !=0){for(int i =0; i<list.size(); i++){ %>
-			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-				<a href="RestaurantInfo.jsp"><img src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a><!-- 식당사진 들어갈 부분 -->
-					<% System.out.print(request.getContextPath()); %>
-					<br>
-					<br>
-					<center><%=list.get(i).getRes_name()%></center>
-				<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
-=======
 			}
 		}
 		%>
@@ -380,11 +366,13 @@ ul li {
 			%>
 			<center><%=list.get(i).getRes_name()%></center>
 			<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
-					<a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
-				</div> -->
+               <a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
+            </div> -->
 		</div>
-		<%}}%>
+		<%
+		}
+		}
+		%>
 
 
 		<div class="pagination flex-c-m flex-w p-l-15 p-r-15 m-t-24 m-b-50">
@@ -396,7 +384,7 @@ ul li {
 	</div>
 
 
-	
+
 	<!-- Footer -->
 	<footer style="display: block; width: 100%; position: absolute;"
 		class="bg1">
