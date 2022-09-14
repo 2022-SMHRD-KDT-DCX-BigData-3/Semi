@@ -83,7 +83,7 @@ ul li {
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
+											<span class="dropbtn_icon"onclick="move()">우리동네 맛집 소개</span>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
@@ -425,6 +425,10 @@ ul li {
 			flyform.submit();
 			//alert(locationVal+"에서 "+likeVal+"먹는다.");
 			
+		}
+		
+		function move(){
+			location.href = "rest.jsp";
 		}
 	</script>
 </body>
