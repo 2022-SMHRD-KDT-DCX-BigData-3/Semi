@@ -52,7 +52,7 @@ public class ResDTO {
 		
 	}
 	
-	public ResDTO(String res_name, String res_addr, String res_runtime, String res_convinient, String res_tel, String menu_name, String menu_img1, String menu_price) {
+	public ResDTO(String res_name, String res_addr, String res_runtime, String res_convinient, String res_tel, String menu_name, String menu_img1, String menu_price,String latitude,String longitude,String keyword_img) {
 		this.res_name = res_name;
 		this.res_addr = res_addr;
 		this.res_runtime = res_runtime;
@@ -61,6 +61,10 @@ public class ResDTO {
 		this.menu_name = menu_name;
 		this.menu_img1 = menu_img1;
 		this.menu_price = menu_price;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.keyword_img = keyword_img;
+				
 	}
 
 	public ResDTO() {
