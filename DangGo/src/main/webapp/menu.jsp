@@ -79,7 +79,7 @@ ul li {
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
+											<span class="dropbtn_icon"onclick="move()">우리동네 맛집 소개</span>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
@@ -98,19 +98,13 @@ ul li {
 						</div>
 
 						<!-- Social -->
-<<<<<<< HEAD
+
 						<div class="search">
           <input type="text" placeholder="검색어 입력">
           <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
         </div>
 					<div align="center"></div>
-=======
-								<div class="search">
-		          <input type="text" placeholder="검색어 입력">
-		          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-		       					 </div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
-				</div>
+
 			</div>
 			</div>
 			
@@ -519,6 +513,10 @@ ul li {
          }
 
       });
+      
+  	function move(){
+		location.href = "rest.jsp";
+	}
    </script>
 
 </body>
