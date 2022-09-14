@@ -220,7 +220,7 @@ ul li {
 						<!-- 지도 API -->
 							<div id="map"style="width:100%;height:380px;">
 							<script type="text/javascript"
-								src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0aa6e71f7a0a47e71475daeb106b3202"></script>
+								src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3ffb745d18ca8ecc37134324336dfac0"></script>
 							<script>
 								var mapContainer = document
 										.getElementById('map'), // 지도를 표시할 div 
