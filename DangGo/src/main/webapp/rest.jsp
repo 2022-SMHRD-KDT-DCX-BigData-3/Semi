@@ -334,6 +334,7 @@ ul li {
 	<div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
 		<!--1 - -->
 		<!-- 식당목록 페이지 -->
+<<<<<<< HEAD
       <%
       if (cnt != 0) {
          for (int i = 0; i < list.size(); i++) {
@@ -341,9 +342,19 @@ ul li {
          }
       }
       %>
+=======
+		<%
+		if (cnt != 0) {
+			for (int i = 0; i < list.size(); i++) {
+				list.get(i);
+			}
+		}
+		%>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
 
 
 
+<<<<<<< HEAD
       <%
       if (cnt != 0) {
          for (int i = 0; i < list.size(); i++) {
@@ -365,6 +376,29 @@ ul li {
       }
       }
       %>
+=======
+		<%
+		if (cnt != 0) {
+			for (int i = 0; i < list.size(); i++) {
+		%>
+		<div
+			class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
+			<a href="RestaurantInfo.jsp"><img
+				src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a>
+			<!-- 식당사진 들어갈 부분 -->
+			<%
+			System.out.print(request.getContextPath());
+			%>
+			<center><%=list.get(i).getRes_name()%></center>
+			<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
+               <a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
+            </div> -->
+		</div>
+		<%
+		}
+		}
+		%>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
 
 
 		<div class="pagination flex-c-m flex-w p-l-15 p-r-15 m-t-24 m-b-50">
