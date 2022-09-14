@@ -3087,6 +3087,16 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	
 }
 
+.tit14 {
+	font-family: GmarketSansMedium;
+	font-weight: 400;
+	font-size: 70px;
+	line-height: 1.2;
+	color: #222222;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
 /*[ Text ]
 -----------------------------------------------------------
 */
@@ -3459,6 +3469,13 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 	font-weight: 400;
 	font-size: 13px;
 	color: #666666;
+	line-height: 1.7;
+}
+.txt44 {
+	font-family: GmarketSansMedium;
+	font-weight: 400;
+	font-size: 30px;
+	color: #222222;
 	line-height: 1.7;
 }
 /*[ Color ]

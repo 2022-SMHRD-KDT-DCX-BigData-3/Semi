@@ -272,6 +272,8 @@
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
 				<a href="RestaurantInfo.jsp"><img src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a><!-- 식당사진 들어갈 부분 -->
 					<% System.out.print(request.getContextPath()); %>
+					<br>
+					<br>
 					<center><%=list.get(i).getRes_name()%></center>
 				<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
 					<a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>

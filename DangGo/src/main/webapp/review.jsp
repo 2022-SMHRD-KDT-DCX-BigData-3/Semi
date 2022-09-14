@@ -3,8 +3,8 @@
 <%@page import="com.smhrd.model.ResDTO"%>
 <%@page import="com.smhrd.model.ResDAO"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%ResDTO dto = (ResDTO)request.getAttribute("info"); %>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,162 +39,84 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
+<style>
+ul li {
+	list-style-type: none;
+	float:left;
+}
+</style>
 </head>
-<body class="animsition">
+<body style="background-color: white;">
 
-	<!-- Header -->
-	<header>
-		<!-- Header desktop -->
-		<div class="wrap-menu-header gradient1 trans-0-4">
-			<div class="container h-full">
-				<div class="wrap_header trans-0-3">
-					<!-- Logo -->
-					<div class="logo">
-						<a href="index.html">
-							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
-						</a>
-					</div>
+	<div style="text-align: center">
+		<header style="position: fixed; width: 100%; bottom: 100%">
+			<!-- Header desktop -->
+			<div class="wrap-menu-header gradient1 trans-0-4">
+				<div class="container h-full">
+					<div class="wrap_header trans-0-3">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="index.jsp"> <img src="images/Dango1.png"
+								width="100px" height="100px" alt="IMG-LOGO"
+								data-logofixed="images/Dango1.png">
+							</a>
+						</div>
+						<div class="box">
 
-					<!-- Menu -->
-					<div class="wrap_menu p-l-45 p-l-0-xl">
-						<nav class="menu">
-							<ul class="main_menu">
-								<li>
-									<a href="index.html">Home</a>
-								</li>
+							<p class="result"></p>
+						</div>
+						<!-- Menu -->
+						<div class="wrap_menu p-l-45 p-l-0-xl">
+							<nav class="menu">
+								<ul class="main_menu">
+									<li><a href="index.jsp">당고</a></li>
 
-								<li>
-									<a href="menu.html">Menu</a>
-								</li>
+									<div style="text-align: center" class="dropdown">
+										<button style="width: 200px;" class="dropbtn">
+											<span class="dropbtn_icon">당고 소개</span>
+										</button>
+										<div style="margin-left: 20%;" class="dropdown-content">
+											<a href="#">이용방법</a>
+										</div>
+									</div>
 
-								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
+									<div class="dropdown">
+										<button style="width: 200px;" class="dropbtn">
+											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+										</button>
+										<div style="width: 400px;" class="dropdown-content address">
+											<ul>
+												<li><a href="#">동구</a></li>
+												<li><a href="#">서구</a></li>
+												<li><a href="#">남구</a></li>
+												<li><a href="#">북구</a></li>
+												<li><a href="#">광산구</a></li>
+											</ul>
+										</div>
+									</div>
 
-								<li>
-									<a href="gallery.html">Gallery</a>
-								</li>
+									<li><a href="survey.jsp">당신이 고르는 한끼</a></li>
+								</ul>
+							</nav>
+						</div>
 
-								<li>
-									<a href="about.html">About</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-
-					<!-- Social -->
-					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
-						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
-					</div>
+						<!-- Social -->
+								<div class="search">
+		          <input type="text" placeholder="검색어 입력">
+		          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+		       					 </div>
 				</div>
 			</div>
-		</div>
-	</header>
-
-	<!-- Sidebar -->
-	<aside class="sidebar trans-0-4">
-		<!-- Button Hide sidebar -->
-		<button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
-
-		<!-- - -->
-		<ul class="menu-sidebar p-t-95 p-b-70">
-			<li class="t-center m-b-13">
-				<a href="index.html" class="txt19">Home</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
-			</li>
-		</ul>
-
-		<!-- - -->
-		<div class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
-			<!-- - -->
-			<h4 class="txt20 m-b-33">
-				Gallery
-			</h4>
-
-			<!-- Gallery -->
-			<div class="wrap-gallery-sidebar flex-w">
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-01.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-01.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-02.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-02.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-03.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-03.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-05.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-05.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-06.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-06.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-07.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-07.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-09.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-09.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-10.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-10.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-11.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-11.jpg" alt="GALLERY">
-				</a>
 			</div>
-		</div>
-	</aside>
+		</header>
 
+	
 
 	<!-- Title Page -->
 	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/bg-title-page-03.jpg);">
 		<h2 class="tit6 t-center">
-			Blog
+			식당 정보
 		</h2>
 	</section>
 
@@ -203,20 +125,20 @@
 	<section>
 		<div class="bread-crumb bo5-b p-t-17 p-b-17">
 			<div class="container">
-				<a href="index.html" class="txt27">
-					Home
+				<a href="index.jsp" class="txt27">
+					메인
 				</a>
 
 				<span class="txt29 m-l-10 m-r-10">/</span>
 
-				<a href="blog.html" class="txt27">
-					Blog
+				<a href="rest.jsp" class="txt27">
+					우리 동네 맛집 소개
 				</a>
 
 				<span class="txt29 m-l-10 m-r-10">/</span>
 
 				<span class="txt29">
-					Cooking recipe delicious
+					당신은 지금 배가 고프다..
 				</span>
 			</div>
 		</div>
@@ -225,55 +147,37 @@
 			<div class="row ">
 				<div class="col-md-8 col-lg-9">
 					<div class="p-t-80 p-b-124 bo5-r p-r-50 h-full p-r-0-md bo-none-md">
-						<!-- Block4 -->
+					
+						<!-- 맛집 메뉴 -->
 						<div class="blo4 p-b-63">
-							<!-- - -->
+							<!-- 음식 사진 -->
+							
 							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
 								<a href="blog-detail.html">
-									<img src="images/blog-05.jpg" alt="IMG-BLOG">
+									<%List<ResDTO> rlist = new ResDAO().ResInfo(); %>
+									<img src="images/<%= rlist.get(0).getMenu_img1()%>" style="width: 900px; height: 300px;">
 								</a>
 
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										28
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
+								
 							</div>
-
-							<!-- - -->
+							
+							<!-- 음식 내용 -->
 							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="blog-detail.html" class="tit9">Cooking recipe Delicious</a>
+								<h4 class="txt44 p-b-16">
+									<%= rlist.get(0).getRes_name()%>
 								</h4>
 
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										28 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 Comments
-									</span>
-								</div>
+								
 
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sem. Nulla facilisi. Sed ultricies eros a nibh tempus, in sodales mi vestibulum. Nullam quis dui ac nisl ultrices euismod et sit amet urna. Morbi semper sapien quis ex tempor, sit amet scelerisque eros rhoncus. Cras scelerisque auctor gravida. Nunc fermentum luctus rhoncus. Nulla vulputate fermentum convallis. In quis pellentesque tortor. Cras metus nibh, gravida vitae ante vel, finibus semper tellus. Nulla vel tincidunt magna. Morbi tempor velit lectus, eu commodo quam volutpat vitae.
+									식당 주소 : <%= rlist.get(0).getRes_addr()%> <br> 
+									영업 시간 : <%= rlist.get(0).getRes_runtime()%><br>
+									편의 시설 :<%= rlist.get(0).getRes_convinient()%><br>
+									전화  : <%= rlist.get(0).getRes_tel() %> <br>
+									메뉴 : <%= rlist.get(0).getMenu_name()%> &nbsp; <%= rlist.get(0).getMenu_price() %>
 								</p>
+								
+								
 							</div>
 						</div>
 
@@ -311,50 +215,9 @@
 
 				<div class="col-md-4 col-lg-3">
 					<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
-						<!-- Search -->
-						<div class="search-sidebar2 size12 bo2 pos-relative">
-							<input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="text" name="search" placeholder="Search">
-							<button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
-						</div>
+	
 
-						<!-- Categories -->
-						<div class="categories">
-							<h4 class="txt33 bo5-b p-b-35 p-t-58">
-								Categories
-							</h4>
-
-							<ul>
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Cooking recipe
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Delicious foods
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Events Design
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Restaurant Place
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										WordPress
-									</a>
-								</li>
-							</ul>
-						</div>
+						
 
 						<!-- Most Popular -->
 						<div class="popular">

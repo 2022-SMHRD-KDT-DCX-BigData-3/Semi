@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+ul li {
+   list-style-type: none;
+   float: left;
+}
+</style>
 <head>
 	<title>Menu</title>
 	<meta charset="UTF-8">
@@ -60,16 +67,9 @@
 							<nav class="menu">
 								<ul class="main_menu">
 									<li><a href="index.jsp">당고</a></li>
-									
-									<div style="text-align: center" class="dropdown">
-										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">당고 소개</span>
-										</button>
-										<div style="margin-left: 20%;" class="dropdown-content">
-											<a href="#">이용방법</a>
-										</div>
-									</div>
-								
+
+									<li><a href="menu.jsp">당고 소개</a></li>
+
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
 											<span class="dropbtn_icon">우리동네 맛집 소개</span>
@@ -91,7 +91,15 @@
 						</div>
 
 						<!-- Social -->
-					
+						<form action="/search/result" method="GET" class="search">
+			                <input type="text" id="searchWord" name="searchWord" 
+			                    maxlength="50" size="20">
+			                <!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
+			                <button class="searchButton">
+			                    <img class="searchButtonImg" alt="Submit Form" src="images/icons/searicon.png" width="30" height="30"/>
+			                </button>
+		                </form>
+					<div align="center"></div>
 				</div>
 			</div>
 			</div>
@@ -476,6 +484,36 @@
 	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+      var beforePosition = document.documentElement.scrollTop
+
+      document.addEventListener('scroll', function() {
+
+         var afterPosition = document.documentElement.scrollTop;
+
+         if (afterPosition > 50) {
+
+            if (beforePosition < afterPosition) {
+
+            } else {
+            }
+
+         } else {
+            // 평상 시
+
+         }
+         if (afterPosition > 60) {
+            $('header').attr('class', 'header-fixed');
+            $('span.dropbtn_icon').attr('style', 'color:black');
+
+         } else {
+            $('header').attr('class', 'none');
+            $('span.dropbtn_icon').attr('style', 'color:white');
+
+         }
+
+      });
+   </script>
 
 </body>
 </html>
