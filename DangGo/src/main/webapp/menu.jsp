@@ -79,7 +79,7 @@ ul li {
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
@@ -98,10 +98,18 @@ ul li {
 						</div>
 
 						<!-- Social -->
+<<<<<<< HEAD
+						<div class="search">
+          <input type="text" placeholder="검색어 입력">
+          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+        </div>
+					<div align="center"></div>
+=======
 								<div class="search">
 		          <input type="text" placeholder="검색어 입력">
 		          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
 		       					 </div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
 				</div>
 			</div>
 			</div>
@@ -255,7 +263,7 @@ ul li {
 			<div class="row p-t-108 p-b-70">
 				
 			<!-- ddd -->
-				<div class="col-md-8 col-lg-6 m-l-r-auto">
+				<div class="colcol m-l-r-auto">
 					<!-- Block3 -->
 					<div class="blo3 flex-w flex-col-l-sm m-b-30">
 						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
@@ -436,13 +444,7 @@ ul li {
 		<div class="end-footer bg2">
 			<div class="container">
 				<div class="flex-sb-m flex-w p-t-22 p-b-22">
-					<div class="p-t-5 p-b-5">
-						<a href="#" class="fs-15 c-white"><i class="fa fa-tripadvisor"
-							aria-hidden="true"></i></a> <a href="#" class="fs-15 c-white"><i
-							class="fa fa-facebook m-l-18" aria-hidden="true"></i></a> <a href="#"
-							class="fs-15 c-white"><i class="fa fa-twitter m-l-18"
-							aria-hidden="true"></i></a>
-					</div>
+					
 
 					<div class="txt17 p-r-20 p-t-5 p-b-5">
 						Copyright &copy; 2022 All rights reserved | This template is made

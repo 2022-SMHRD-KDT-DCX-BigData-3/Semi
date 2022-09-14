@@ -74,7 +74,7 @@ ul li {
 							<p class="result"></p>
 						</div>
 						<!-- Menu -->
-						<div class="wrap_menu p-l-45 p-l-0-xl">
+						<div "class="wrap_menu p-l-45 p-l-0-xl">
 							<nav class="menu">
 								<ul class="main_menu">
 									<li><a href="index.jsp">당고</a></li>
@@ -83,7 +83,7 @@ ul li {
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
@@ -347,14 +347,7 @@ ul li {
 		<div class="end-footer bg2">
 			<div class="container">
 				<div class="flex-sb-m flex-w p-t-22 p-b-22">
-					<div class="p-t-5 p-b-5">
-						<a href="#" class="fs-15 c-white"><i class="fa fa-tripadvisor"
-							aria-hidden="true"></i></a> <a href="#" class="fs-15 c-white"><i
-							class="fa fa-facebook m-l-18" aria-hidden="true"></i></a> <a href="#"
-							class="fs-15 c-white"><i class="fa fa-twitter m-l-18"
-							aria-hidden="true"></i></a>
-					</div>
-
+					
 					<div class="txt17 p-r-20 p-t-5 p-b-5">
 						Copyright &copy; 2022 All rights reserved | This template is made
 						with <i class="fa fa-heart"></i> by <a
