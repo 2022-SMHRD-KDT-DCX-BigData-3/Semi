@@ -33,7 +33,12 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 
-
+<style>
+ul li {
+   list-style-type: none;
+   float: left;
+}
+</style>
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -63,10 +68,20 @@
                         <li>
                           <a href="menu.jsp">당고소개</a>
                         </li>
-      
-                        <li>
-                          <a href="rest.jsp">우리 동네 맛집 소개</a>
-                        </li>
+      								<div class="dropdown">
+										<button style="width: 200px;" class="dropbtn">
+											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
+										</button>
+										<div style="width: 400px;" class="dropdown-content address">
+											<ul>
+												<li><a href="#">동구</a></li>
+												<li><a href="#">서구</a></li>
+												<li><a href="#">남구</a></li>
+												<li><a href="#">북구</a></li>
+												<li><a href="#">광산구</a></li>
+											</ul>
+										</div>
+									</div>
       
                         <li>
                           <a href="survey.jsp">당신이 고르는 한끼</a>
@@ -76,7 +91,10 @@
                </div>
 
                <!-- Social -->
-             
+             <div class="search">
+          <input type="text" placeholder="검색어 입력">
+          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+        </div>
             </div>
          </div>
       </div>

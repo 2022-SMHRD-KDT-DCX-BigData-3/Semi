@@ -245,7 +245,7 @@
 .p-t-37 {padding-top: 37px;}
 .p-t-38 {padding-top: 38px;}
 .p-t-39 {padding-top: 39px;}
-.p-t-40 {padding-top: 40px;}
+.p-t-40 {padding-top: 0px;}
 .p-t-41 {padding-top: 41px;}
 .p-t-42 {padding-top: 42px;}
 .p-t-43 {padding-top: 43px;}
@@ -2670,7 +2670,7 @@
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	-ms-align-items: center;
 	align-items: center;
 }

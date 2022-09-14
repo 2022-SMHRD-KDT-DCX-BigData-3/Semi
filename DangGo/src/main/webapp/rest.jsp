@@ -109,11 +109,11 @@ ul li {
 									<li><a href="index.jsp">당고</a></li>
 
 									<li><a href="menu.jsp">당고 소개</a></li>
-										
+
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+											<span class="dropbtn_icon"><a href="rest.jsp">우리동네 맛집 소개</a></span>
 										</button>
 										<div style="width: 500px;" class="dropdown-content address">
 											<ul>
@@ -215,83 +215,75 @@ ul li {
 
 
 		<!-- Title Page -->
-		<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/orange.jpg);">
-		<h2 class="tit11 t-center">
-			당
-		</h2>
-		<h1 class="tit12 t-center">
-			신은 지금&nbsp;
-		</h1>
-		
-		<h2 class="tit12 t-center">
-			배가&nbsp;
-		</h2>
-		
-		<h2 class="tit11 t-center">
-			고
-		</h2>
-		<h1 class="tit12 t-center">
-			프다
-		</h1>
-		
-	</section>
+		<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15"
+			style="background-image: url(images/orange.jpg);">
+			<h2 class="tit11 t-center">당</h2>
+			<h1 class="tit12 t-center">신은 지금&nbsp;</h1>
+
+			<h2 class="tit12 t-center">배가&nbsp;</h2>
+
+			<h2 class="tit11 t-center">고</h2>
+			<h1 class="tit12 t-center">프다</h1>
+
+		</section>
 
 
 
 		<!-- Gallery -->
 		<div class="galleryContainer"
 			style="display: flex; justify-content: space-evenly">
-			
+
 
 			<form action="listResCon" method="get">
 				<div class="dropdown">
 					<ul>
 						<button style="width: 150px;" class="dropbtn">
-								<span class="dropbtn_icon1">남구</span>
-							</button>
+							<span class="dropbtn_icon1">남구</span>
+						</button>
 						<div style="width: 300px;" class="dropdown-content address">
-							
-								<li><a href="#">한식</a></li>
-								<li><a href="#">중식</a></li>
-								<li><a href="#">일식</a></li>
-								<li><a href="#">양식</a></li>
-							
+
+							<li><a href="#">한식</a></li>
+							<li><a href="#">중식</a></li>
+							<li><a href="#">일식</a></li>
+							<li><a href="#">양식</a></li>
+
 						</div>
 				</div>
 			</form>
 
 			<form action="listResCon" method="get">
 				<div class="dropdown">
-				<ul>
-					<button style="width: 150px;" class="dropbtn">
-						<span class="dropbtn_icon1">동구</span>
-					</button>
-					<div style="width: 300px;" class="dropdown-content address">
-
-						<li><a href="#">한식</a></li>
-						<li><a href="#">중식</a></li>
-						<li><a href="#">일식</a></li>
-						<li><a href="#">양식</a></li>
-
-
-					</div>
-				</div>
-			</form>
-
-
-			<form action="listResCon" method="get">
-				<div class="dropdown">
-				<ul>
-					<button style="width: 150px;" class="dropbtn"><span class="dropbtn_icon1">서구</span>
+					<ul>
+						<button style="width: 150px;" class="dropbtn">
+							<span class="dropbtn_icon1">동구</span>
 						</button>
-					<div style="width: 300px;" class="dropdown-content address">
+						<div style="width: 300px;" class="dropdown-content address">
 
-						<li><a href="#">한식</a></li>
-						<li><a href="#">중식</a></li>
-						<li><a href="#">일식</a></li>
-						<li><a href="#">양식</a></li>
+							<li><a href="#">한식</a></li>
+							<li><a href="#">중식</a></li>
+							<li><a href="#">일식</a></li>
+							<li><a href="#">양식</a></li>
 
-					</div>
+
+						</div>
+				</div>
+			</form>
+
+
+			<form action="listResCon" method="get">
+				<div class="dropdown">
+					<ul>
+						<button style="width: 150px;" class="dropbtn">
+							<span class="dropbtn_icon1">서구</span>
+						</button>
+						<div style="width: 300px;" class="dropdown-content address">
+
+							<li><a href="#">한식</a></li>
+							<li><a href="#">중식</a></li>
+							<li><a href="#">일식</a></li>
+							<li><a href="#">양식</a></li>
+
+						</div>
 				</div>
 			</form>
 
@@ -299,40 +291,40 @@ ul li {
 
 			<form action="listResCon" method="get">
 				<div class="dropdown">
-				<ul>
-					<button style="width: 150px;" class="dropbtn">
-						<span class="dropbtn_icon1">북구</span>
-					</button>
-					<div style="width: 300px;" class="dropdown-content address">
+					<ul>
+						<button style="width: 150px;" class="dropbtn">
+							<span class="dropbtn_icon1">북구</span>
+						</button>
+						<div style="width: 300px;" class="dropdown-content address">
 
-						<li><a href="#">한식</a></li>
-						<li><a href="#">중식</a></li>
-						<li><a href="#">일식</a></li>
-						<li><a href="#">양식</a></li>
+							<li><a href="#">한식</a></li>
+							<li><a href="#">중식</a></li>
+							<li><a href="#">일식</a></li>
+							<li><a href="#">양식</a></li>
 
-					</div>
+						</div>
 				</div>
 			</form>
 
 
 			<form action="listResCon" method="get">
 				<div class="dropdown">
-				<ul>
-					<button style="width: 150px;" class="dropbtn">
-						<span class="dropbtn_icon1">광산구</span>
-					</button>
-					<div style="width: 200px;" class="dropdown-content address">
+					<ul>
+						<button style="width: 150px;" class="dropbtn">
+							<span class="dropbtn_icon1">광산구</span>
+						</button>
+						<div style="width: 200px;" class="dropdown-content address">
 
-						<li><a href="#">한식</a></li>
-						<li><a href="#">중식</a></li>
-						<li><a href="#">일식</a></li>
-						<li><a href="#">양식</a></li>
-						</ul>
-					</div>
+							<li><a href="#">한식</a></li>
+							<li><a href="#">중식</a></li>
+							<li><a href="#">일식</a></li>
+							<li><a href="#">양식</a></li>
+					</ul>
 				</div>
-			</form>
-
 		</div>
+		</form>
+
+	</div>
 	</div>
 	</ul>
 	</div>
@@ -342,49 +334,37 @@ ul li {
 	<div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
 		<!--1 - -->
 		<!-- 식당목록 페이지 -->
-		<%
-		if (cnt != 0) {
-			for (int i = 0; i < list.size(); i++) {
-				list.get(i);
-
-			}}%>
-			
-			
-			
-			<%if(cnt !=0){for(int i =0; i<list.size(); i++){ %>
-			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-				<a href="RestaurantInfo.jsp"><img src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a><!-- 식당사진 들어갈 부분 -->
-					<% System.out.print(request.getContextPath()); %>
-					<br>
-					<br>
-					<center><%=list.get(i).getRes_name()%></center>
-				<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
-=======
-			}
-		}
-		%>
+      <%
+      if (cnt != 0) {
+         for (int i = 0; i < list.size(); i++) {
+            list.get(i);
+         }
+      }
+      %>
 
 
 
-		<%
-		if (cnt != 0) {
-			for (int i = 0; i < list.size(); i++) {
-		%>
-		<div
-			class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-			<a href="RestaurantInfo.jsp"><img
-				src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a>
-			<!-- 식당사진 들어갈 부분 -->
-			<%
-			System.out.print(request.getContextPath());
-			%>
-			<center><%=list.get(i).getRes_name()%></center>
-			<!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DCX-BigData-3/Semi.git
-					<a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
-				</div> -->
-		</div>
-		<%}}%>
+      <%
+      if (cnt != 0) {
+         for (int i = 0; i < list.size(); i++) {
+      %>
+      <div
+         class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
+         <a href="RestaurantInfo.jsp"><img
+            src="images/<%=list.get(i).getMenu_img1()%>" alt="IMG-GALLERY"></a>
+         <!-- 식당사진 들어갈 부분 -->
+         <%
+         System.out.print(request.getContextPath());
+         %>
+         <center><%=list.get(i).getRes_name()%></center>
+         <!-- <div class="overlay-item-gallery trans-0-4 flex-c-m">
+               <a class="btn-show-gallery flex-c-m fa fa-search" href="listResCon" data-lightbox="gallery"></a>
+            </div> -->
+      </div>
+      <%
+      }
+      }
+      %>
 
 
 		<div class="pagination flex-c-m flex-w p-l-15 p-r-15 m-t-24 m-b-50">
@@ -396,7 +376,7 @@ ul li {
 	</div>
 
 
-	
+
 	<!-- Footer -->
 	<footer style="display: block; width: 100%; position: absolute;"
 		class="bg1">
