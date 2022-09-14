@@ -64,6 +64,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/search.css">
 
 <title>result</title>
 <style>
@@ -88,7 +89,7 @@ to {
 }
 
 </style>
-<title>Document</title>
+<title>result</title>
 </head>
 <head>
  
@@ -100,7 +101,7 @@ to {
 	List<ResultSetDTO> list=(List<ResultSetDTO>)request.getAttribute("resDto");
 
 %>
-<body style="background-image: url(images/back.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
+<body style="background-image: url(images/orange.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
 	<div style="text-align: center">
 		<header style="width: 100%; bottom: 100%">
 			<!-- Header desktop -->
@@ -121,14 +122,7 @@ to {
 								<ul class="main_menu">
 									<li><a href="index.jsp">당고</a></li>
 
-									<div style="text-align: center" class="dropdown">
-										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">당고 소개</span>
-										</button>
-										<div style="margin-left: 20%;" class="dropdown-content">
-											<a href="#">이용방법</a>
-										</div>
-									</div>
+									<li><a href="menu.jsp">당고 소개</a></li>
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
@@ -151,14 +145,10 @@ to {
 
 
 						<!-- Social -->
-					<form action="/search/result" method="GET" class="search">
-			                <input type="text" id="searchWord" name="searchWord" 
-			                    maxlength="50" size="20">
-			                <!-- <input id="searchButton" type="image" src="" style="width:25px; height:25px;" alt="Submit Form"/> -->
-			                <button class="searchButton">
-			                    <img class="searchButtonImg" alt="Submit Form" src="images/icons/searicon.png" width="30" height="30"/>
-			                </button>
-		                </form>
+					<div class="search">
+          <input type="text" placeholder="검색어 입력">
+          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+        </div>
 				</div>
 				</div>
 				</div>
@@ -360,5 +350,34 @@ to {
 	</footer>
 </body>
 
-	
+		<script>
+		var beforePosition = document.documentElement.scrollTop
+
+		document.addEventListener('scroll', function() {
+
+			var afterPosition = document.documentElement.scrollTop;
+
+			if (afterPosition > 50) {
+
+				if (beforePosition < afterPosition) {
+
+				} else {
+				}
+
+			} else {
+				// 평상 시
+
+			}
+			if (afterPosition > 60) {
+				$('header').attr('class', 'header-fixed');
+				$('span.dropbtn_icon').attr('style', 'color:black');
+
+			} else {
+				$('header').attr('class', 'none');
+				$('span.dropbtn_icon').attr('style', 'color:white');
+
+			}
+
+		});
+	</script>
 </html>
