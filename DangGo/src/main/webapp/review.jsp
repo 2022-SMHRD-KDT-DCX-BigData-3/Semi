@@ -172,7 +172,7 @@ ul li {
 								<p>
 									식당 주소 : <%= rlist.get(0).getRes_addr()%> <br> 
 									영업 시간 : <%= rlist.get(0).getRes_runtime()%><br>
-									편의 시설 :<%= rlist.get(0).getRes_convinient()%><br>
+									편의 시설 :<%= rlist.get(0).getRes_convenient()%><br>
 									전화  : <%= rlist.get(0).getRes_tel() %> <br>
 									메뉴 : <%= rlist.get(0).getMenu_name()%> &nbsp; <%= rlist.get(0).getMenu_price() %>
 								</p>
