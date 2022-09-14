@@ -14,4 +14,10 @@
 	<select id="selectOneBoard" resultType="Board" parameterType="int">
 		select * from board where num=#{num}
 	</select>
+	
+	
+	<insert id="insertReview" parameterType="reviewDTO">
+	 insert into tbl_review values(tbl_review_seq.nextval, #{resNum}, #{img},#{content}, #{username}, 0,sysdate, '123')
+	</insert>
+	
 </mapper>

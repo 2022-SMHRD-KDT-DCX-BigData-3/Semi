@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Blog Detail</title>
+	<title>Review</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -203,42 +203,51 @@ ul li {
 						</div>
 
 						<!-- 리뷰 작성 -->
-						<form class="leave-comment p-t-10">
+						
+						
+					
+						<form class="leave-comment p-t-10" action="reviewWriteCon" method="post" enctype="multipart/form-data"><%String receipt_img = request.getParameter("receipt_img"); %>
 							<h4 class="txt33 p-b-14">
 								영수증 리뷰 남기기
 							</h4>
 
 							<p>
-								리뷰,이름 입력후 영수증을 첨부하여 리뷰를 등록해주세요 
+								제목,이름,리뷰 입력 후 영수증을 첨부하여 리뷰를 등록해주세요 
 							</p>
 
 							
 
-					
+							<br>
+							<br>
 
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder=" 리뷰제목"<%String review_name = request.getParameter("review_name");%>>
-								
+							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20 m-r-10">
+								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="reviewname" placeholder=" 제목"<%String review_name = request.getParameter("review_name");%>>
 							</div>
 		
 								
 							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="website" placeholder="Website">
+								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name" placeholder="이름"<%String reviewer_name = request.getParameter("reviewer_name"); %>>
 							</div>	
 								
 								
-								<form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
+								
 									<input type="file" name="profile">
-								</form>
+									<input type="text"  style="display:none" name="resNum" value=<%=rlist.get(0).getRes_seq()%>>
 
 
-								<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"></textarea>
-
+								<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"><%String review_content = request.getParameter("review_content"); %></textarea>
+								<%System.out.println(review_name + reviewer_name +  receipt_img + review_content); %>
+								
 								<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
 								리뷰 등록하기
+							<%-- 	<%int row = new BoardDAO().insertBoard(bvo); %> --%>
+							
 							</button>
 						</form>
+						
+						
+						
 					</div>
 				</div>
 				
@@ -258,19 +267,19 @@ ul li {
 							<script>
 								var mapContainer = document
 										.getElementById('map'), // 지도를 표시할 div 
-								mapOption = {
-									center : new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>), // 지도의 중심좌표
-									level : 3
-								// 지도의 확대 레벨
-									};
+										mapOption = {
+											center : new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>), // 지도의 중심좌표
+											level : 3
+										// 지도의 확대 레벨
+											};
 
-								var map = new kakao.maps.Map(mapContainer,
-										mapOption); // 지도를 생성합니다
+										var map = new kakao.maps.Map(mapContainer,
+												mapOption); // 지도를 생성합니다
 
-								// 마커가 표시될 위치입니다 
-								var markerPosition = new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>);
+										// 마커가 표시될 위치입니다 
+										var markerPosition = new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>);
 
-								// 마커를 생성합니다
+										// 마커를 생성합니다
 								var marker = new kakao.maps.Marker({
 									position : markerPosition
 								});

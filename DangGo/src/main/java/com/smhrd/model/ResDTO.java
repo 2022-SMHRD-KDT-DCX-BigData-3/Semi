@@ -13,7 +13,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class ResDTO {
 	@NonNull
-	private String res_seq;
+	private int res_seq;
 	@NonNull
 	private String res_name;
 	@NonNull
@@ -52,7 +52,8 @@ public class ResDTO {
 		
 	}
 	
-	public ResDTO(String res_name, String res_addr, String res_runtime, String res_convenient, String res_tel, String menu_name, String menu_img1, String menu_price,String latitude,String longitude,String keyword_img) {
+	public ResDTO(int res_seq, String res_name, String res_addr, String res_runtime, String res_convenient, String res_tel, String menu_name, String menu_img1, String menu_price,String latitude,String longitude,String keyword_img) {
+		this.res_seq = res_seq;
 		this.res_name = res_name;
 		this.res_addr = res_addr;
 		this.res_runtime = res_runtime;
