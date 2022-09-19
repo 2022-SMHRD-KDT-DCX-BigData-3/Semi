@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -17,6 +19,14 @@ public class reviewDAO {
 	         
 	         session.close();
 	         return cnt;
+	   }
+	   
+	   public List<reviewDTO> showReview(String res_name){
+	         SqlSession session = sqlSessionFactory.openSession(true);
+	         
+	         List<reviewDTO> reviewList = session.selectList("showReview", res_name);
+	         
+	         return reviewList;
 	   }
 
 }

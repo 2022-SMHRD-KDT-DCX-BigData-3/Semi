@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 
 import com.smhrd.db.SqlSessionManager;
 
@@ -35,9 +36,9 @@ public class ResDAO {
 		return list;
 	}
 
-	public ResDTO listRinfo(ResDTO dto) {
+	public ResDTO listRinfo(String rName) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ResDTO info = session.selectOne("listRinfo", dto);
+		ResDTO info = session.selectOne("ResInfo", rName);
 		session.close();
 		return info;
 	}
@@ -71,5 +72,6 @@ public class ResDAO {
 
 		return rlist;
 	}
-
+	
+	
 }

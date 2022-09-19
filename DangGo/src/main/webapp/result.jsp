@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ResDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ResultSetDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -90,6 +92,9 @@ to {
 
 </style>
 <title>result</title>
+
+
+
 </head>
 <head>
  
@@ -101,6 +106,8 @@ to {
 	List<ResultSetDTO> list=(List<ResultSetDTO>)request.getAttribute("resDto");
 
 %>
+
+
 <body style="background-image: url(images/orange.jpg); background-repeat: no-repeat; background-size: 10000px 10000px;">
 	<div style="text-align: center">
 		<header style="width: 100%; bottom: 100%">
@@ -179,10 +186,13 @@ to {
 			
 		
 	</header></div>
-		<script>
 	
+	
+
+	<script>
+		
 	setTimeout(function(){   // 1초 후 작동해야할 코드    
-		document.getElementById("test").style.display = "none";
+		document.getElementById("test","imgld").style.display = "none";
 	
 		test();
 	}, 3000);
@@ -191,9 +201,11 @@ to {
 		var h1 = document.createElement("h1");
 		var location='<%=request.getAttribute("location")%>';
 		var kindFood='<%=request.getAttribute("kindFood")%>';
-
-		var h1Text = document.createTextNode( '당신이 선택한 '+location+'의 '+kindFood+' 맛집입니다' );
+	
+		
+		var h1Text = document.createTextNode( '당신이 선택한 '+location+'의 '+kindFood+' 맛집입니다');
 		h1.appendChild(h1Text);
+			
 		
 		document.getElementById("test2").appendChild(h1);
         <%
@@ -203,13 +215,33 @@ to {
     		location=bean.getRes_addr();
     	%>
 		document.getElementById('tdList_<%=index%>').innerText='<%=index%>. '+'<%=location%>';
+		
     	<%
     		index++;
     	}
 		%>
+		
+		
+		
 	}
 	</script>
 	
+	<br>
+	<br>
+	<br>
+	<div class="fadein">
+	<a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%B6%81%EA%B5%AC"  style="text-align: center;">
+		<h2>
+		
+		맛집 정보로 이동
+		</h2>
+	</a>
+	</div>
+
+
+
+
+
 	<br>
 	<br>
 	<br>
@@ -350,7 +382,10 @@ to {
 	</footer>
 </body>
 
-		<script>
+
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
 		var beforePosition = document.documentElement.scrollTop
 
 		document.addEventListener('scroll', function() {

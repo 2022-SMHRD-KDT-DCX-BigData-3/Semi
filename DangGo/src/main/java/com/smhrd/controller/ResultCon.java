@@ -34,8 +34,11 @@ public class ResultCon extends HttpServlet {
 		// jsp에서 받는 파라미터
 		String loc = request.getParameter("loc");//동구,광산구...
 		String like = request.getParameter("like");//한식, 중식...
+	
+	
 		System.out.println("1== : "+loc);
 		System.out.println("2== : "+like);
+	
 		ResultDAO dao = new ResultDAO();		
 				
 		List<ResultSetDTO> resInfo = dao.resultInfo(loc, like);
@@ -43,6 +46,7 @@ public class ResultCon extends HttpServlet {
 		request.setAttribute("resDto", resInfo);
 		request.setAttribute("location", loc);
 		request.setAttribute("kindFood", like);
+	
 		//로그인 성공/실패 상관없이 무조건 메인으로 이동
 		RequestDispatcher rd = request.getRequestDispatcher("result.jsp");
 		rd.forward(request, response);

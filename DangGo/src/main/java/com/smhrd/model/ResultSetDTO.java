@@ -30,4 +30,6 @@ public class ResultSetDTO {
 	@NonNull
 	private String latitude;
 	private String longitude;
+	
+	
 }

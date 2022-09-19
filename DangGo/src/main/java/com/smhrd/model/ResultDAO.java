@@ -17,6 +17,7 @@ public class ResultDAO {
 		ResultSetDTO dto = new ResultSetDTO();
 		dto.setRes_addr(loc);
 		dto.setRes_categoy(like);
+	
 		
 		List<ResultSetDTO> resInfo = session.selectList("restultInfo", dto);
 		

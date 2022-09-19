@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
@@ -26,7 +27,7 @@ public class reviewWriteCon extends HttpServlet {
 		
 		
 		request.setCharacterEncoding("UTF-8");
-	      
+	 
 	      
 	      String saveDir =request.getServletContext().getRealPath("images");
 	      //15MB 제한
@@ -37,12 +38,13 @@ public class reviewWriteCon extends HttpServlet {
 	      String reviewer_name = multi.getParameter("name");
 	      String receipt_img = URLEncoder.encode(multi.getFilesystemName("profile"), "UTF-8");
 	      String review_content = multi.getParameter("commentent");
-	      String review_name = multi.getParameter("reviewname");	
-	      int resNum = Integer.valueOf(multi.getParameter("resNum"));
+
+	     BigDecimal resNum = new BigDecimal(Integer.valueOf(multi.getParameter("resNum")));
+	   
 	      
-	      reviewDTO review_dto = new reviewDTO(review_name, reviewer_name, receipt_img, review_content, resNum);
+	      reviewDTO review_dto = new reviewDTO(reviewer_name, receipt_img, review_content, resNum);
 	      
-	      
+	     
 	      int cnt = new reviewDAO().insertReview(review_dto);
 	      
 	      if(cnt>0) {
@@ -51,7 +53,17 @@ public class reviewWriteCon extends HttpServlet {
 	    	  System.out.println("리뷰 입력 실패");
 	      }
 	      
-	      response.sendRedirect("./RestaurantInfo.jsp");
+	      
+	      String data = request.getParameter("index");
+	      String rName = request.getParameter("res_name");
+	      
+//	      System.out.println("TestTes  "+rName);
+//	      String str = new String(rName);
+//		  String rName2 = new String(str.getBytes("utf-8"), "euc-kr");
+	      
+	      response.setContentType("text/plain; charset=utf-8;");
+	      
+	      response.sendRedirect("./RestaurantInfo.jsp?index="+data+"&res_name="+rName);
 	
 	}
 	

@@ -72,8 +72,7 @@ public class ResDTO {
 		super();
 	}
 	
-
-
+	
 	
 	
 	

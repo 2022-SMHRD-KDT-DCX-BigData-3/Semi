@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.reviewDAO"%>
+<%@page import="com.smhrd.model.reviewDTO"%>
 <%@page import="com.smhrd.model.BoardDAO"%>
 <%@page import="com.smhrd.model.BoardDTO"%>
 <%@page import="org.apache.ibatis.reflection.*"%>
@@ -5,7 +7,7 @@
 <%@page import="com.smhrd.model.ResDTO"%>
 <%@page import="com.smhrd.model.ResDAO"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +55,7 @@ ul li {
 <body style="background-color: white;">
 
 	<div style="text-align: center">
-		<header style="position: fixed; width: 100%; bottom: 100%">
+		<header style="position: absolute; width: 100%; bottom: 100%">
 			<!-- Header desktop -->
 			<div class="wrap-menu-header gradient1 trans-0-4">
 				<div class="container h-full">
@@ -76,22 +78,25 @@ ul li {
 									<li><a href="index.jsp">당고</a></li>
 
 									<div style="text-align: center" class="dropdown">
-										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">당고 소개</span>
-										</button>
+
+										<a href="menu.jsp">
+											<button style="width: 200px;" class="dropbtn">
+												<span class="dropbtn_icon">당고 소개</span>
+											</button>
+										</a>
 									</div>
 
 									<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon">우리동네 맛집 소개</span>
+											<span class="dropbtn_icon"onclick="move()">우리동네 맛집 소개</span>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
-												<li><a href="#">동구</a></li>
-												<li><a href="#">서구</a></li>
-												<li><a href="#">남구</a></li>
-												<li><a href="#">북구</a></li>
-												<li><a href="#">광산구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%8F%99%EA%B5%AC">동구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EC%84%9C%EA%B5%AC">서구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC">남구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%B6%81%EA%B5%AC">북구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EA%B4%91%EC%82%B0%EA%B5%AC">광산구</a></li>
 											</ul>
 										</div>
 									</div>
@@ -102,11 +107,14 @@ ul li {
 						</div>
 
 						<!-- Social -->
-								<div class="search">
-		          <input type="text" placeholder="검색어 입력">
-		          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-		       					 </div>
-				</div>
+						<form action="https://www.google.com/search" method="GET">
+							<div class="search">
+								<input type="text" name="query" value="" placeholder="검색어 입력">
+								<img
+									src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+							</div>
+						</form>
+					</div>
 			</div>
 			</div>
 			
@@ -168,12 +176,44 @@ ul li {
 						<!-- 맛집 메뉴 -->
 						<div class="blo4 p-b-63">
 							<!-- 음식 사진 -->
+								<%
 							
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
+								
+							
+								
+								String data = request.getParameter("index");
+								System.out.println("ResTest " + data);
+								int index = Integer.valueOf(data);
+								%>
+								
+								
+
+								<%
+								
+								ArrayList<ResDTO> list = new ArrayList<>();
+								list = (ArrayList<ResDTO>) session.getAttribute("list");
+								
+								
+								String rName =list.get(index).getRes_name();
+								System.out.println("Restau" + rName);
+								
+								
+								
+						/* 	 	String str = new String(rName);
+								byte [] strBuffer = str.getBytes("utf-8");
+								String rName2 = String.valueOf(strBuffer); */
+								
+								
+							
+							
+								%>
+
+								<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
 								<a href="rest.jsp">
-									<%List<ResDTO> rlist = new ResDAO().ResInfo(); %>
-									<img src="images/<%= rlist.get(0).getMenu_img1()%>" style="width: 400px; height: 300px;">
-									<img src="images/<%= rlist.get(0).getKeyword_img()%>"style="width: 400px; height: 500px;">
+									<%ResDTO rlist = new ResDAO().listRinfo(rName); %>
+									
+									<img src="images/<%= rlist.getMenu_img1()%>" style="width: 400px; height: 300px;">
+									<img src="images/<%= rlist.getKeyword_img()%>"style="width: 400px; height: 500px;">
 								</a>
 								
 								
@@ -182,17 +222,17 @@ ul li {
 							<!-- 식당정보 -->
 							<div class="text-blo4 p-t-33">
 								<h4 class="txt44 p-b-16">
-									<%= rlist.get(0).getRes_name()%>
+									<%= rlist.getRes_name()%>
 								</h4>
 
 								
 
 								<p>
-									식당 주소 : <%= rlist.get(0).getRes_addr()%> <br> 
-									영업 시간 : <%= rlist.get(0).getRes_runtime()%><br>
-									편의 시설 :<%= rlist.get(0).getRes_convenient()%><br>
-									전화  : <%= rlist.get(0).getRes_tel() %> <br>
-									메뉴 : <%= rlist.get(0).getMenu_name()%> &nbsp; <%= rlist.get(0).getMenu_price() %><br>
+									식당 주소 : <%= rlist.getRes_addr()%> <br> 
+									영업 시간 : <%= rlist.getRes_runtime()%><br>
+									편의 시설 :<%= rlist.getRes_convenient()%><br>
+									전화  : <%= rlist.getRes_tel() %> <br>
+									대표메뉴 : <%= rlist.getMenu_name()%> &nbsp; <%= rlist.getMenu_price() %><br>
 									
 							
 									
@@ -206,7 +246,7 @@ ul li {
 						
 						
 					
-						<form class="leave-comment p-t-10" action="reviewWriteCon" method="post" enctype="multipart/form-data"><%String receipt_img = request.getParameter("receipt_img"); %>
+						<form class="leave-comment p-t-10" action="reviewWriteCon?index=<%=data%>&res_name=<%=rName%>" method="post" enctype="multipart/form-data"><%String receipt_img = request.getParameter("receipt_img"); %>
 							<h4 class="txt33 p-b-14">
 								영수증 리뷰 남기기
 							</h4>
@@ -219,10 +259,7 @@ ul li {
 
 							<br>
 							<br>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20 m-r-10">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="reviewname" placeholder=" 제목"<%String review_name = request.getParameter("review_name");%>>
-							</div>
+							
 		
 								
 							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
@@ -232,18 +269,19 @@ ul li {
 								
 								
 									<input type="file" name="profile">
-									<input type="text"  style="display:none" name="resNum" value=<%=rlist.get(0).getRes_seq()%>>
+									<input type="text"  style="display:none" name="resNum" value=<%=rlist.getRes_seq()%>>
 
 
 								<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="리뷰를 남겨주세요"><%String review_content = request.getParameter("review_content"); %></textarea>
-								<%System.out.println(review_name + reviewer_name +  receipt_img + review_content); %>
+								<%System.out.println(receipt_img + review_content + reviewer_name ); %>
 								
 								<!-- Button3 -->
+								
 							<button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
 								리뷰 등록하기
 							<%-- 	<%int row = new BoardDAO().insertBoard(bvo); %> --%>
-							
 							</button>
+							
 						</form>
 						
 						
@@ -255,9 +293,7 @@ ul li {
 					<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
 						<!-- 지도 API -->
 							<div style="text-align: center">
-							<a href="https://map.kakao.com/?map_type=TYPE_MAP&target=traffic&rt=474985%2C459929%2C481083%2C451380&rt1=
-							%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EC%84%9C%EA%B5%AC%EC%B2%AD&rt2=%EC%A0%9C%EC%A3%BC%EC%83%9D%EA%B0%88%EB%B9%84&rtIds=
-							14588328%2C10803708&rtTypes=PLACE%2CPLACE&transitOption=3">
+							<a href="https://map.kakao.com/link/to/<%= rlist.getRes_name()%>,<%= rlist.getLatitude()%>,<%= rlist.getLongitude()%>">
 							<h2 class="txt44">가는 방법</h2></a>
 							</div>
 							<br>
@@ -268,7 +304,7 @@ ul li {
 								var mapContainer = document
 										.getElementById('map'), // 지도를 표시할 div 
 										mapOption = {
-											center : new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>), // 지도의 중심좌표
+											center : new kakao.maps.LatLng(<%= rlist.getLatitude()%>,<%= rlist.getLongitude()%>), // 지도의 중심좌표
 											level : 3
 										// 지도의 확대 레벨
 											};
@@ -277,7 +313,7 @@ ul li {
 												mapOption); // 지도를 생성합니다
 
 										// 마커가 표시될 위치입니다 
-										var markerPosition = new kakao.maps.LatLng(<%= rlist.get(0).getLatitude()%>,<%= rlist.get(0).getLongitude()%>);
+										var markerPosition = new kakao.maps.LatLng(<%= rlist.getLatitude()%>,<%= rlist.getLongitude()%>);
 
 										// 마커를 생성합니다
 								var marker = new kakao.maps.Marker({
@@ -299,97 +335,70 @@ ul li {
 							<h4 class="txt44 p-b-35 p-t-58">
 								최근 리뷰
 							</h4>
-
+								
+								
+								
+								
 							<ul>
 								<li class="flex-w m-b-25">
 									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="images/reviews.jpg" alt="IMG-BLOG">
+										<a >
+										<%  
+										   List<reviewDTO> reviewList = new reviewDAO().showReview(rName);%>
+											<img src="images/<%= reviewList.get(0).getImg()%>" style="width: 100px; height: 100px;">
 										</a>
 									</div>
 
 									<div class="size28">
 										<a class="dis-block txt28 m-b-8">
-											인생 최고 고기 맛집 인정
+											<%= reviewList.get(0).getContent()%>
 										</a>
 
 										<span class="txt14">
-											2022-09-14
+											<%=reviewList.get(0).getDate() %>
 										</span>
 									</div>
 								</li>
 
 								<li class="flex-w m-b-25">
 									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="images/blog-12.jpg" alt="IMG-BLOG">
+										<a >
+											<img src="images/<%= reviewList.get(1).getImg()%>" style="width: 100px; height: 100px;">
 										</a>
 									</div>
 
 									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Eggs and Cheese
+										<a class="dis-block txt28 m-b-8">
+											<%= reviewList.get(1).getContent()%>
 										</a>
 
 										<span class="txt14">
-											July 2, 2017
+											<%=reviewList.get(1).getDate() %>
 										</span>
 									</div>
 								</li>
 
 								<li class="flex-w m-b-25">
 									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="images/blog-13.jpg" alt="IMG-BLOG">
+										<a >
+											<img src="images/<%= reviewList.get(2).getImg()%>" style="width: 100px; height: 100px;">
 										</a>
 									</div>
 
 									<div class="size28">
 										<a href="#" class="dis-block txt28 m-b-8">
-											Style the Wedding Party
+											<%= reviewList.get(2).getContent()%>
 										</a>
 
 										<span class="txt14">
-											May 28, 2017
+											<%= reviewList.get(2).getDate()%>
 										</span>
 									</div>
 								</li>
 
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="images/blog-14.jpg" alt="IMG-BLOG">
-										</a>
-									</div>
+							
 
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Cooking recipe Delicious
-										</a>
-
-										<span class="txt14">
-											May 25, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="images/blog-15.jpg" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Pizza is prepared fresh
-										</a>
-
-										<span class="txt14">
-											May 2, 2017
-										</span>
-									</div>
-								</li>
+								
 							</ul>
 						</div>
 
@@ -639,6 +648,10 @@ ul li {
 
       });
    </script>
-
+	<script>
+	function move(){
+		location.href = "http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC";
+	}
+	</script>
 </body>
 </html>

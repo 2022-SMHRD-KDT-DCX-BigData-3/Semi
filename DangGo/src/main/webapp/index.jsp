@@ -70,15 +70,15 @@ ul li {
                         </li>
       								<div class="dropdown">
 										<button style="width: 200px;" class="dropbtn">
-											<span class="dropbtn_icon"onclick="move()">우리동네 맛집 소개</span>
+											<a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC"><span class="dropbtn_icon">우리동네 맛집 소개</span></a>
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
-												<li><a href="#">동구</a></li>
-												<li><a href="#">서구</a></li>
-												<li><a href="#">남구</a></li>
-												<li><a href="#">북구</a></li>
-												<li><a href="#">광산구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%8F%99%EA%B5%AC">동구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EC%84%9C%EA%B5%AC">서구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC">남구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%B6%81%EA%B5%AC">북구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EA%B4%91%EC%82%B0%EA%B5%AC">광산구</a></li>
 											</ul>
 										</div>
 									</div>
@@ -91,20 +91,28 @@ ul li {
                </div>
 
                <!-- Social -->
+          <form action="http://localhost:8083/DangGo/RestaurantInfo.jsp?index=2&res_name=" method="GET">     
              <div class="search">
-          <input type="text" placeholder="검색어 입력">
-          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
+          <input type="text" name="query" value="" placeholder="검색어 입력">
+          <img onclick="move()" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" style="width: 20px " height="20px">
+            </div>
+            <div>
+            <a href="http://localhost:8083/DangGo/RestaurantInfo.jsp?index=2&res_name=%EC%B4%88%EB%8F%88" ></a>
+            </div>
+        </form>
             </div>
          </div>
       </div>
    </header>
-		 
-	
 
 	
+	
 
-	<!-- Slide1 -->
+
+
+
+
+	<!-- 메인 화면 -->
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
@@ -121,7 +129,7 @@ ul li {
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
 							<!-- Button1 -->
 							<a href="survey.jsp" class="btn1 flex-c-m size6 txt3 trans-0-4">
-								당신의 고르는 한 끼 !
+								당신이 고르는 한 끼 !
 							</a>
 						</div>
 					</div>
@@ -160,8 +168,14 @@ ul li {
 	<script src="js/main.js"></script>
 	<script>
 	function move(){
-		location.href = "rest.jsp";
+		location.href = "http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC";
 	}
+	
+	function move(){
+		location.href="RestaurantInfo.jsp?index=2&res_name=반달옥%20봉선본점"
+	}
+	
+	
 	</script>
 	
 

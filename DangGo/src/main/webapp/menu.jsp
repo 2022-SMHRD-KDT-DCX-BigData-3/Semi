@@ -72,9 +72,6 @@ ul li {
 										<button style="width: 200px;" class="dropbtn">
 											<span class="dropbtn_icon">당고 소개</span>
 										</button>
-										<div style="margin-left: 20%;" class="dropdown-content">
-											<a href="#">이용방법</a>
-										</div>
 									</div>
 
 									<div class="dropdown">
@@ -83,11 +80,11 @@ ul li {
 										</button>
 										<div style="width: 400px;" class="dropdown-content address">
 											<ul>
-												<li><a href="#">동구</a></li>
-												<li><a href="#">서구</a></li>
-												<li><a href="#">남구</a></li>
-												<li><a href="#">북구</a></li>
-												<li><a href="#">광산구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%8F%99%EA%B5%AC">동구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EC%84%9C%EA%B5%AC">서구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC">남구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EB%B6%81%EA%B5%AC">북구</a></li>
+												<li><a href="http://localhost:8083/DangGo/listResCon?raddr=%EA%B4%91%EC%82%B0%EA%B5%AC">광산구</a></li>
 											</ul>
 										</div>
 									</div>
@@ -99,10 +96,12 @@ ul li {
 
 						<!-- Social -->
 
-						<div class="search">
-          <input type="text" placeholder="검색어 입력">
-          <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
+					<form action="http://localhost:8083/DangGo/RestaurantInfo.jsp?index=2&res_name=" method="GET">     
+             <div class="search">
+          <input type="text" name="query" value="" placeholder="검색어 입력">
+          <img onclick="move()" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" style="width: 20px " height="20px">
+            </div>
+        </form>
 					<div align="center"></div>
 
 			</div>
@@ -515,8 +514,13 @@ ul li {
       });
       
   	function move(){
-		location.href = "rest.jsp";
+		location.href = "http://localhost:8083/DangGo/listResCon?raddr=%EB%82%A8%EA%B5%AC";
 	}
+  	
+  	function move(){
+		location.href="RestaurantInfo.jsp?index=2&res_name=반달옥%20봉선본점"
+	}
+  	
    </script>
 
 </body>
